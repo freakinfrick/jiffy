@@ -1,0 +1,985 @@
+[
+ {
+  "q": "copy a whole folder and everything inside it somewhere else",
+  "cmd": [
+   "cp",
+   "rsync"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "delete a folder that still has stuff in it",
+  "cmd": [
+   "rm"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "which files in here changed in the last day",
+  "cmd": [
+   "find"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "look for a file called config somewhere under my home",
+  "cmd": [
+   "find",
+   "locate",
+   "plocate",
+   "fd",
+   "fdfind"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "show the folder tree two levels deep",
+  "cmd": [
+   "tree",
+   "find"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "see the full details of a file like its size and when it was modified",
+  "cmd": [
+   "stat",
+   "ls"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "what type of file is this thing",
+  "cmd": [
+   "file"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "compare two folders to see which files differ",
+  "cmd": [
+   "diff",
+   "rsync"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "point a link at a directory elsewhere so i can reach it from here",
+  "cmd": [
+   "ln"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "move every jpg in this folder into a subfolder called photos",
+  "cmd": [
+   "mv"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "free up space by finding the largest files on the whole drive",
+  "cmd": [
+   "find",
+   "du",
+   "ncdu"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "split a huge file into smaller pieces",
+  "cmd": [
+   "split"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "glue several text files together into one",
+  "cmd": [
+   "cat"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "make a file read only for everyone",
+  "cmd": [
+   "chmod"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "give my user ownership of everything in this directory",
+  "cmd": [
+   "chown"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "check what a symbolic link points to",
+  "cmd": [
+   "readlink",
+   "ls",
+   "realpath"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "print the absolute path of a file",
+  "cmd": [
+   "realpath",
+   "readlink"
+  ],
+  "area": "files",
+  "split": "heldout"
+ },
+ {
+  "q": "show only the lines of a log that mention error, ignoring case",
+  "cmd": [
+   "grep",
+   "rg"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "how many words are in this essay",
+  "cmd": [
+   "wc"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "flip the order of lines in a file so the last is first",
+  "cmd": [
+   "tac"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "remove blank lines from a file",
+  "cmd": [
+   "sed",
+   "grep",
+   "awk"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "turn all the lowercase letters in a file into capitals",
+  "cmd": [
+   "tr",
+   "awk",
+   "sed"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "cut out just the second field of each line separated by colons",
+  "cmd": [
+   "cut",
+   "awk"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "put two files side by side column by column",
+  "cmd": [
+   "paste"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "number every line of a file",
+  "cmd": [
+   "nl",
+   "cat"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "show lines that are in one sorted file but not the other",
+  "cmd": [
+   "comm",
+   "diff"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "wrap long lines of text to 80 characters",
+  "cmd": [
+   "fold",
+   "fmt"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "view a file starting from the bottom",
+  "cmd": [
+   "tail",
+   "less"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "find which files in a project mention a function name",
+  "cmd": [
+   "grep",
+   "rg",
+   "ag",
+   "git grep",
+   "git-grep"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "check the spelling of words in a document",
+  "cmd": [
+   "aspell",
+   "hunspell",
+   "ispell"
+  ],
+  "area": "text",
+  "split": "heldout"
+ },
+ {
+  "q": "which drive is almost full",
+  "cmd": [
+   "df"
+  ],
+  "area": "disk",
+  "split": "heldout"
+ },
+ {
+  "q": "list the usb drives and hard disks plugged in",
+  "cmd": [
+   "lsblk",
+   "fdisk",
+   "blkid"
+  ],
+  "area": "disk",
+  "split": "heldout"
+ },
+ {
+  "q": "safely unplug a mounted drive",
+  "cmd": [
+   "umount",
+   "udisksctl",
+   "eject"
+  ],
+  "area": "disk",
+  "split": "heldout"
+ },
+ {
+  "q": "check a disk's health",
+  "cmd": [
+   "smartctl"
+  ],
+  "area": "disk",
+  "split": "heldout"
+ },
+ {
+  "q": "how much space does each user's home folder take",
+  "cmd": [
+   "du"
+  ],
+  "area": "disk",
+  "split": "heldout"
+ },
+ {
+  "q": "find out the uuid of a partition",
+  "cmd": [
+   "blkid",
+   "lsblk"
+  ],
+  "area": "disk",
+  "split": "heldout"
+ },
+ {
+  "q": "stop a program that has frozen",
+  "cmd": [
+   "kill",
+   "pkill",
+   "killall",
+   "xkill"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "which program is hogging the memory right now",
+  "cmd": [
+   "top",
+   "htop",
+   "ps"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "find the process id of firefox",
+  "cmd": [
+   "pgrep",
+   "pidof",
+   "ps"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "make a running program use less cpu so the rest of the system stays snappy",
+  "cmd": [
+   "renice",
+   "nice"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "time how long a command takes to finish",
+  "cmd": [
+   "time"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "show the tree of processes and their children",
+  "cmd": [
+   "pstree",
+   "ps"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "set a job to run every night at 3am",
+  "cmd": [
+   "crontab"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "run a command once at a specific time later today",
+  "cmd": [
+   "at"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "pause for 5 seconds in a script",
+  "cmd": [
+   "sleep"
+  ],
+  "area": "process",
+  "split": "heldout"
+ },
+ {
+  "q": "what ports are open and listening on this machine",
+  "cmd": [
+   "ss",
+   "netstat",
+   "lsof"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "which server does example.org point to",
+  "cmd": [
+   "dig",
+   "host",
+   "nslookup",
+   "getent"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "trace the route packets take to a server",
+  "cmd": [
+   "traceroute",
+   "tracepath",
+   "mtr"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "log in to another computer remotely over a secure shell",
+  "cmd": [
+   "ssh"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "send a file to a remote server",
+  "cmd": [
+   "scp",
+   "rsync",
+   "sftp"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "test whether a port on a remote host accepts connections",
+  "cmd": [
+   "nc",
+   "ncat",
+   "netcat",
+   "telnet",
+   "nmap"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "list the network cards on this machine and whether they are up",
+  "cmd": [
+   "ip",
+   "ifconfig",
+   "nmcli"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "connect to a wifi network from the terminal",
+  "cmd": [
+   "nmcli",
+   "iwctl",
+   "wpa_cli"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "download a whole website for offline reading",
+  "cmd": [
+   "wget",
+   "httrack"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "send a POST request with json to an api",
+  "cmd": [
+   "curl",
+   "http",
+   "wget"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "show the routing table",
+  "cmd": [
+   "ip",
+   "route",
+   "netstat"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "see which dns server this machine uses",
+  "cmd": [
+   "resolvectl",
+   "systemd-resolve",
+   "nmcli",
+   "cat"
+  ],
+  "area": "network",
+  "split": "heldout"
+ },
+ {
+  "q": "run a command as the administrator",
+  "cmd": [
+   "sudo"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "switch to a different user account",
+  "cmd": [
+   "su",
+   "sudo"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "add a new user account to this machine",
+  "cmd": [
+   "adduser",
+   "useradd"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "change my password",
+  "cmd": [
+   "passwd"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "which groups am I a member of",
+  "cmd": [
+   "groups",
+   "id"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "put a user in the docker group",
+  "cmd": [
+   "usermod",
+   "gpasswd",
+   "adduser"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "who has logged into this machine recently",
+  "cmd": [
+   "last",
+   "lastlog"
+  ],
+  "area": "users",
+  "split": "heldout"
+ },
+ {
+  "q": "update the list of available packages and upgrade everything",
+  "cmd": [
+   "apt",
+   "apt-get"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "remove a program I installed along with its config",
+  "cmd": [
+   "apt",
+   "apt-get",
+   "dpkg"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "search for a package by keyword",
+  "cmd": [
+   "apt",
+   "apt-cache"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "list every package installed",
+  "cmd": [
+   "dpkg",
+   "apt",
+   "dpkg-query"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "install a .deb file I downloaded",
+  "cmd": [
+   "dpkg",
+   "apt",
+   "gdebi"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "install a snap app",
+  "cmd": [
+   "snap"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "install a python library for my user",
+  "cmd": [
+   "pip",
+   "pip3",
+   "pipx"
+  ],
+  "area": "packages",
+  "split": "heldout"
+ },
+ {
+  "q": "which ubuntu version is this",
+  "cmd": [
+   "lsb_release",
+   "cat",
+   "hostnamectl"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "how many cpu cores does this machine have",
+  "cmd": [
+   "nproc",
+   "lscpu"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "what graphics card is installed",
+  "cmd": [
+   "lspci",
+   "lshw",
+   "nvidia-smi"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "list the hardware in this computer",
+  "cmd": [
+   "lshw",
+   "lspci",
+   "inxi",
+   "hwinfo"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "read the kernel's messages about hardware",
+  "cmd": [
+   "dmesg",
+   "journalctl"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "what time zone is the system set to",
+  "cmd": [
+   "timedatectl",
+   "date"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "change the computer's name",
+  "cmd": [
+   "hostnamectl",
+   "hostname"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "reboot the computer",
+  "cmd": [
+   "reboot",
+   "shutdown",
+   "systemctl"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "turn the machine off in 10 minutes",
+  "cmd": [
+   "shutdown"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "restart the ssh service",
+  "cmd": [
+   "systemctl",
+   "service"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "make a service start automatically at boot",
+  "cmd": [
+   "systemctl"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "see the logs for one particular service",
+  "cmd": [
+   "journalctl"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "how long did boot take",
+  "cmd": [
+   "systemd-analyze"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "list the usb devices connected",
+  "cmd": [
+   "lsusb"
+  ],
+  "area": "system",
+  "split": "heldout"
+ },
+ {
+  "q": "unpack a .tar.gz archive",
+  "cmd": [
+   "tar"
+  ],
+  "area": "archive",
+  "split": "heldout"
+ },
+ {
+  "q": "zip up a folder to send by email",
+  "cmd": [
+   "zip",
+   "tar"
+  ],
+  "area": "archive",
+  "split": "heldout"
+ },
+ {
+  "q": "look inside a zip without extracting it",
+  "cmd": [
+   "unzip",
+   "zipinfo",
+   "7z"
+  ],
+  "area": "archive",
+  "split": "heldout"
+ },
+ {
+  "q": "compress a single file as small as possible",
+  "cmd": [
+   "xz",
+   "gzip",
+   "zstd",
+   "bzip2",
+   "7z"
+  ],
+  "area": "archive",
+  "split": "heldout"
+ },
+ {
+  "q": "open a .7z archive",
+  "cmd": [
+   "7z",
+   "7za",
+   "7zr"
+  ],
+  "area": "archive",
+  "split": "heldout"
+ },
+ {
+  "q": "save my work in progress without committing so I can switch branches",
+  "cmd": [
+   "git stash",
+   "git-stash"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "see who last changed each line of a file",
+  "cmd": [
+   "git blame",
+   "git-blame"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "get a copy of a repository from github",
+  "cmd": [
+   "git clone",
+   "git-clone"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "pull the latest changes from the server",
+  "cmd": [
+   "git pull",
+   "git-pull"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "combine another branch into the one I'm on",
+  "cmd": [
+   "git merge",
+   "git-merge",
+   "git rebase",
+   "git-rebase"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "tag this commit as version 1.0",
+  "cmd": [
+   "git tag",
+   "git-tag"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "see which files I've modified",
+  "cmd": [
+   "git status",
+   "git-status",
+   "git diff",
+   "git-diff"
+  ],
+  "area": "git",
+  "split": "heldout"
+ },
+ {
+  "q": "what time is it in utc",
+  "cmd": [
+   "date"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "convert a video to mp3 audio",
+  "cmd": [
+   "ffmpeg"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "shrink a jpeg photo to half its size",
+  "cmd": [
+   "convert",
+   "magick",
+   "mogrify",
+   "ffmpeg"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "generate a random password",
+  "cmd": [
+   "pwgen",
+   "openssl",
+   "tr",
+   "head"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "calculate 17 times 23 in the terminal",
+  "cmd": [
+   "bc",
+   "expr",
+   "python3",
+   "awk",
+   "echo"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "show a list of the commands I typed recently",
+  "cmd": [
+   "history",
+   "fc"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "see the manual for a command",
+  "cmd": [
+   "man",
+   "info",
+   "tldr"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "find which command does something when I only know a keyword",
+  "cmd": [
+   "apropos",
+   "man"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ },
+ {
+  "q": "encrypt a file with a password",
+  "cmd": [
+   "gpg",
+   "openssl",
+   "zip",
+   "age"
+  ],
+  "area": "misc",
+  "split": "heldout"
+ }
+]

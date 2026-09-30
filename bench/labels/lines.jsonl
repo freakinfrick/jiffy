@@ -1,0 +1,195 @@
+{"q": "add a new user account to this machine", "line": "adduser {{username}}", "label": 1, "why": "needs sudo", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "add a new user account to this machine", "line": "sudo useradd {{username}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "change my password", "line": "passwd", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "change the computer's name", "line": "hostname {{new_hostname}}", "label": 0, "why": "temporary until reboot, needs root; hostnamectl is the persistent way", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "change the computer's name", "line": "sudo hostnamectl set-hostname \"{{hostname}}\"", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "check a disk's health", "line": "iostat -xN {{sda}}", "label": 0, "why": "I/O statistics, not health", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "check a disk's health", "line": "sudo hdparm -I {{/dev/device}}", "label": 0, "why": "drive identity, not a health verdict", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "check a disk's health", "line": "sudo smartctl -H {{/dev/sdX}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "check the spelling of words in a document", "line": "aspell check {{path/to/file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "compress a single file as small as possible", "line": "gzip -{{1..9}} -c {{path/to/file}} > {{path/to/compressed_file.gz}}", "label": 0, "why": "level blank, request said as small as possible (-9)", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "compress a single file as small as possible", "line": "p7zip {{path/to/file}}", "label": 0, "why": "default level, not smallest", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "compress a single file as small as possible", "line": "xz -9 {{path/to/file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "connect to a wifi network from the terminal", "line": "nmcli d w c {{ssid}} -a", "label": "unsure", "why": "--ask after the object may be rejected by nmcli", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "connect to a wifi network from the terminal", "line": "sudo wpa_cli en {{number}}", "label": 0, "why": "enables an already-configured network only", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "connect to a wifi network from the terminal", "line": "tldr nmcli connection", "label": 0, "why": "shows docs", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "connect to a wifi network from the terminal", "line": "tldr nmcli device", "label": 0, "why": "shows docs", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "copy a whole folder and everything inside it somewhere else", "line": "cp -r {{path/to/source_directory}} {{path/to/target_directory}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "copy a whole folder and everything inside it somewhere else", "line": "install -D {{path/to/source_file1 path/to/source_file2 ...}} {{path/to/destination}}", "label": 0, "why": "copies files, not a folder tree", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "copy a whole folder and everything inside it somewhere else", "line": "rsync -a {{path/to/source}} {{path/to/destination}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "awk 'BEGIN {FS=\":\";printf \"%-20s %6s %25s\\n\", \"Name\", \"UID\", \"Shell\"} $4 >= 1000 {printf \"%-20s %6d %25s\\n\", $1, $4, $7}' /etc/passwd", "label": 0, "why": "unrelated passwd report", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "awk -F :", "label": 0, "why": "no program", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "cut -f 2 -d :", "label": 1, "why": "reads stdin; fine as a filter", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "cut -f 2,6 {{path/to/file}}", "label": 0, "why": "wrong fields, no delimiter", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "cut -f {{list}} -d {{delim}}", "label": 0, "why": "blanks the request answered", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "cut | sed 's/apple/mango/g'", "label": 0, "why": "nonsense pipeline", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "gawk -F ',' '{print $NF}' {{path/to/file}}", "label": 0, "why": "comma, last field", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "cut out just the second field of each line separated by colons", "line": "sed", "label": 0, "why": "bare sed", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "delete a folder that still has stuff in it", "line": "builtin {{command}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "delete a folder that still has stuff in it", "line": "rm -r", "label": 0, "why": "no target", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "delete a folder that still has stuff in it", "line": "rm -r {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "delete a folder that still has stuff in it", "line": "sh", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "delete a folder that still has stuff in it", "line": "sh -c \"{{command}}\"", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "encrypt a file with a password", "line": "openssl enc -pass {{arg}} -k {{password}} -in {{path/to/file}} encrypt", "label": 0, "why": "no cipher, stray argument", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "encrypt a file with a password", "line": "py3rsa-encrypt -i {{input}} {{PUBLIC_KEY}}", "label": 0, "why": "public key, not password", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find the process id of firefox", "line": "htop", "label": 0, "why": "interactive, prints nothing", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find the process id of firefox", "line": "htop -F {{--filter=filter}}", "label": 0, "why": "filter blank the request answered (firefox)", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find the process id of firefox", "line": "pidof firefox", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find the process id of firefox", "line": "pidof {{bash}}", "label": 0, "why": "stray example value", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find the process id of firefox", "line": "ps aux | grep firefox", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find which command does something when I only know a keyword", "line": "apropos {{keyword}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find which command does something when I only know a keyword", "line": "apropos {{regex}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find which command does something when I only know a keyword", "line": "aws help", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find which command does something when I only know a keyword", "line": "whatis -r 'keyword'", "label": 0, "why": "literal keyword; whatis searches names only", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find which command does something when I only know a keyword", "line": "whatis keyword", "label": 0, "why": "whatis searches names only", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "find which command does something when I only know a keyword", "line": "which {{executable}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "free up space by finding the largest files on the whole drive", "line": "df", "label": 0, "why": "filesystem totals, not files", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "free up space by finding the largest files on the whole drive", "line": "du -a drive", "label": 0, "why": "literal 'drive'", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "free up space by finding the largest files on the whole drive", "line": "du -ah -t {{1G|1024M|1048576K}} .[^.]* *", "label": 0, "why": "current dir, not whole drive", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "free up space by finding the largest files on the whole drive", "line": "ncdu /", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "generate a random password", "line": "apg", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "give my user ownership of everything in this directory", "line": "builtin {{command}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "give my user ownership of everything in this directory", "line": "chown -R {{path/to/file}}", "label": 0, "why": "no owner", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "give my user ownership of everything in this directory", "line": "sudo -D directory -u {{user}}", "label": 0, "why": "runs as user, no ownership change", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "give my user ownership of everything in this directory", "line": "sudo -u tex -g {{group}} {{id -a}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "give my user ownership of everything in this directory", "line": "sudo -u {{user}} -g {{group}} {{id -a}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "give my user ownership of everything in this directory", "line": "sudo chown -R tex .", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "how much space does each user's home folder take", "line": "du -s", "label": 0, "why": "current dir only", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "how much space does each user's home folder take", "line": "du -sh /home", "label": 0, "why": "one total, not per user", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "how much space does each user's home folder take", "line": "ncdu /home", "label": 1, "why": "interactive but shows per-user sizes", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "how much space does each user's home folder take", "line": "xfs_quota", "label": 0, "why": "XFS only, no args", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list every package installed", "line": "apt list -i", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list every package installed", "line": "dpkg -l {{pattern}}", "label": 0, "why": "pattern blank where every package was asked", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list every package installed", "line": "dpkg-query -l", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the network cards on this machine and whether they are up", "line": "ip l", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the network cards on this machine and whether they are up", "line": "networkctl", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the network cards on this machine and whether they are up", "line": "nmcli d", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the usb devices connected", "line": "lsusb", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the usb devices connected", "line": "xinput list", "label": 0, "why": "input devices", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the usb drives and hard disks plugged in", "line": "lsblk", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the usb drives and hard disks plugged in", "line": "lsusb", "label": 0, "why": "USB devices, not disks", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "list the usb drives and hard disks plugged in", "line": "udisksctl status", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "log in to another computer remotely over a secure shell", "line": "login -h {{host}} {{user}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "log in to another computer remotely over a secure shell", "line": "ssh {{username}}@{{remote_host}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "log in to another computer remotely over a secure shell", "line": "tailscale ssh {{username}}@{{host}}", "label": "unsure", "why": "only inside a tailnet", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "look inside a zip without extracting it", "line": "file -z {{path/to/file.zip}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "look inside a zip without extracting it", "line": "funzip {{path/to/archive.zip}}", "label": 0, "why": "extracts the first member", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "look inside a zip without extracting it", "line": "zipinfo -1 {{path/to/archive.zip}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "file | sed -n '1p'", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "gawk 'NR%3==1' {{path/to/file}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "nl", "label": "unsure", "why": "no file operand; reads stdin", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "nl -b line {{path/to/file}}", "label": 0, "why": "invalid -b style", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "pr -n -D \"{{format}}\" {{path/to/file1 path/to/file2 ...}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "sed", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "number every line of a file", "line": "{{command}} | sed -n '1p'", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pause for 5 seconds in a script", "line": "bash -c \"{{echo 'bash is executed'}}\"", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pause for 5 seconds in a script", "line": "sh -c \"{{command}}\"", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pause for 5 seconds in a script", "line": "sleep 5", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pause for 5 seconds in a script", "line": "wait", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "print the absolute path of a file", "line": "dpkg-realpath {{path/to/file}}", "label": "unsure", "why": "dpkg-internal realpath variant", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "print the absolute path of a file", "line": "namei {{path/to/a}} {{path/to/b}} {{path/to/c}}", "label": 0, "why": "lists components", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "print the absolute path of a file", "line": "realpath {{path/to/file_or_directory}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "print the absolute path of a file", "line": "realpath {{path/to/file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pull the latest changes from the server", "line": "curl -O {{https://example.com/filename.zip}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pull the latest changes from the server", "line": "git pull", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pull the latest changes from the server", "line": "git sync", "label": 0, "why": "not a stock git command", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "pull the latest changes from the server", "line": "rsync -r --delete rsync://{{host}}:{{path/to/source}} {{path/to/destination}}", "label": 0, "why": "mirror with delete, not a pull", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "put a user in the docker group", "line": "gpasswd -a {{user}} docker", "label": 1, "why": "needs sudo", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "put a user in the docker group", "line": "sudo usermod -aG docker {{username}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "read the kernel's messages about hardware", "line": "journalctl -n {{n}} -f", "label": 0, "why": "all logs, not kernel (-k)", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "read the kernel's messages about hardware", "line": "sudo dmesg", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "reboot the computer", "line": "poweroff --reboot", "label": 1, "why": "needs sudo", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "reboot the computer", "line": "reboot", "label": 1, "why": "needs sudo over ssh", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "reboot the computer", "line": "systemctl reboot", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "remove blank lines from a file", "line": "cat {{path/to/file}} | git stripspace", "label": 0, "why": "collapses blank runs, keeps one", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "remove blank lines from a file", "line": "cat {{path/to/file}} | grep -v \"{{search_pattern}}\"", "label": 0, "why": "pattern blank the request answered (^$)", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "remove blank lines from a file", "line": "sed -i '/^[[:space:]]*$/d' {{path/to/file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command as the administrator", "line": "pkexec {{command}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command as the administrator", "line": "sudo runuser administrator -c '{{command}}'", "label": 0, "why": "no user named administrator", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command as the administrator", "line": "sudo {{less /var/log/syslog}}", "label": 1, "why": "blank holds an example command; fill it and it works", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command once at a specific time later today", "line": "at -t {{time}} command", "label": 0, "why": "at reads the job from stdin; trailing word breaks it", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command once at a specific time later today", "line": "at {{hh:mm}}", "label": 1, "why": "then type the command at the prompt", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command once at a specific time later today", "line": "batch -t {{time}} command", "label": 0, "why": "batch waits for low load, not a time", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command once at a specific time later today", "line": "echo \"{{./make_db_backup.sh}}\" | batch", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "run a command once at a specific time later today", "line": "sudo systemd-run --on-calendar={{calendar_event}} {{command}} {{argument1 argument2 ...}}", "label": 1, "why": "needs a one-time calendar spec", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "safely unplug a mounted drive", "line": "eject", "label": 0, "why": "ejects the default drive", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "safely unplug a mounted drive", "line": "sudo umount {{path/to/mounted_directory}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "safely unplug a mounted drive", "line": "udisksctl power-off -b {{/dev/sdX}}", "label": "unsure", "why": "needs the filesystem unmounted first", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "save my work in progress without committing so I can switch branches", "line": "git stash", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "save my work in progress without committing so I can switch branches", "line": "patch -i {{patch.diff}} -p 1", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "save my work in progress without committing so I can switch branches", "line": "xfce4-terminal --command \"{{command_with_args}}\"", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "search for a package by keyword", "line": "apt search {{package}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "search for a package by keyword", "line": "apt-cache search {{query}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "search for a package by keyword", "line": "cargo search {{query}}", "label": 0, "why": "Rust crates, not system packages", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "search for a package by keyword", "line": "npm s {{keyword}}", "label": 0, "why": "npm packages, not system packages", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "see the logs for one particular service", "line": "docker compose logs {{service_name}}", "label": 0, "why": "compose service, not a system service", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "see the logs for one particular service", "line": "journalctl -u {{unit}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "see which dns server this machine uses", "line": "cat {{path/to/file}}", "label": 0, "why": "file is known (/etc/resolv.conf), left blank", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "see which dns server this machine uses", "line": "nslookup", "label": 0, "why": "interactive prompt", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "see which dns server this machine uses", "line": "nslookup {{example.com}}", "label": "unsure", "why": "shows the local stub, not the upstream server", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "see which dns server this machine uses", "line": "resolvectl", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "send a file to a remote server", "line": "curl -X POST -d '{{name=bob}}' {{http://example.com/form}}", "label": 0, "why": "posts a form, not a file", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "send a file to a remote server", "line": "rsync {{path/to/source}} {{path/to/destination}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "send a file to a remote server", "line": "scp {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "set a job to run every night at 3am", "line": "0 10 * * * {{command_to_execute}}", "label": 0, "why": "10am, and not a command", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "set a job to run every night at 3am", "line": "at 3am", "label": 0, "why": "once, not every night", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "set a job to run every night at 3am", "line": "builtin {{command}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "set a job to run every night at 3am", "line": "cloud-init-per 3am {{path/to/file}} {{cmd}} {{arg1}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "set a job to run every night at 3am", "line": "crontab -e", "label": 1, "why": "then add the line in the editor", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "set a job to run every night at 3am", "line": "crontab {{path/to/file}}", "label": "unsure", "why": "replaces the whole crontab with the file", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "show lines that are in one sorted file but not the other", "line": "comm -3 {{path/to/file}} {{path/to/file}}", "label": 1, "why": "both blanks share a name", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "show lines that are in one sorted file but not the other", "line": "comm {{file1}} {{file2}}", "label": 0, "why": "also shows common lines", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "show lines that are in one sorted file but not the other", "line": "diff --suppress-common-lines {{path/to/file}}", "label": 0, "why": "one file", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "show lines that are in one sorted file but not the other", "line": "diff {{path/to/old_file}} {{path/to/new_file}}", "label": "unsure", "why": "diff works but is not the sorted-file tool", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "show lines that are in one sorted file but not the other", "line": "sdiff {{path/to/file1}} {{path/to/file2}}", "label": 0, "why": "shows all lines side by side", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "convert -extent {{geometry}} -geometry {{geometry}} -scale {{geometry}} -resize {{size}}", "label": 0, "why": "flag pile, no files", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "convert -scale {{geometry}} -resize {{size}}", "label": 0, "why": "no files", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "mogrify -extent {{geometry}} -geometry {{geometry}} -scale {{geometry}} -resize {{size}}", "label": 0, "why": "flag pile, no file", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "mogrify -scale {{geometry}} -resize {{size}}", "label": 0, "why": "no file", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "tldr magick convert", "label": 0, "why": "shows docs", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "tldr magick mogrify", "label": 0, "why": "shows docs", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "shrink a jpeg photo to half its size", "line": "truncate -s -2G {{path/to/file}}", "label": 0, "why": "unsafe: truncates the file", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "switch to a different user account", "line": "builtin {{command}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "switch to a different user account", "line": "login", "label": 0, "why": "needs root", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "switch to a different user account", "line": "login {{user}}", "label": 0, "why": "needs root", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "switch to a different user account", "line": "su", "label": "unsure", "why": "switches to root only", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "switch to a different user account", "line": "su {{username}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "trace the route packets take to a server", "line": "mtr {{example.com}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "trace the route packets take to a server", "line": "mtr {{path/to/file}}", "label": 0, "why": "file blank, wants a host", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "trace the route packets take to a server", "line": "ping 10.0.0.1", "label": 0, "why": "ping does not trace the route", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "trace the route packets take to a server", "line": "tracepath", "label": 0, "why": "no host", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "trace the route packets take to a server", "line": "tracepath -p {{33434}} server", "label": 0, "why": "literal 'server'", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "trace the route packets take to a server", "line": "tracepath -p {{33434}} {{host}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "turn all the lowercase letters in a file into capitals", "line": "perl -i'.bak' -p -e 's/regex/{{replacement}}/g' {{path/to/files}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "turn all the lowercase letters in a file into capitals", "line": "sed -i 's/apple/mango/g' {{path/to/file}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "turn all the lowercase letters in a file into capitals", "line": "tr < {{path/to/file}} \"[:lower:]\" \"[:upper:]\"", "label": 1, "why": "prints to stdout, file unchanged", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "unpack a .tar.gz archive", "line": "7z x {{path/to/archive.7z}}", "label": 0, "why": "leaves the .tar", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "unpack a .tar.gz archive", "line": "gzip -d {{path/to/file.gz}}", "label": 0, "why": "leaves the .tar", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "unpack a .tar.gz archive", "line": "p7zip -d", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "unpack a .tar.gz archive", "line": "p7zip -d {{compressed.ext}}.7z", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "unpack a .tar.gz archive", "line": "tar -f {{archive}} -x -z", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "unpack a .tar.gz archive", "line": "tar xvf {{path/to/source.tar.ext}}", "label": 1, "why": "GNU tar detects gzip", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "what time is it in utc", "line": "date -u", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "what time is it in utc", "line": "date -u +%Y-%m-%dT%H:%M:%SZ", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "what time is it in utc", "line": "timedatectl", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "what time is it in utc", "line": "zdump utc", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "which files in here changed in the last day", "line": "find . -daystart -mtime {{-1}} -exec {{tar -cvf archive.tar}} {} \\+", "label": 0, "why": "archives the files", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "which files in here changed in the last day", "line": "find {{path/to/directory}} -daystart -mtime {{-1}} -exec {{tar -cvf archive.tar}} {} \\+", "label": 0, "why": "archives the files", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "which files in here changed in the last day", "line": "git log --name-only --name-status --since={{date}}", "label": 0, "why": "commits, not files on disk", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "which files in here changed in the last day", "line": "git log --name-only --name-status --since={{date}} --stat", "label": 0, "why": "commits, not files on disk", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "which files in here changed in the last day", "line": "git log --stat", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "which files in here changed in the last day", "line": "git status", "label": 0, "why": "uncommitted, not by time", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "who has logged into this machine recently", "line": "last", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "who has logged into this machine recently", "line": "lastlog", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "who has logged into this machine recently", "line": "who", "label": 0, "why": "who is on now, not recently", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "wrap long lines of text to 80 characters", "line": "fmt -w 80", "label": 1, "why": "filter", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "wrap long lines of text to 80 characters", "line": "fmt -w 80 {{path/to/file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "wrap long lines of text to 80 characters", "line": "fold", "label": 1, "why": "fold defaults to 80; filter", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "wrap long lines of text to 80 characters", "line": "fold -w 80 {{path/to/file}}", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "wrap long lines of text to 80 characters", "line": "sed -i 's/apple/mango/g' {{path/to/file}}", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "zip up a folder to send by email", "line": "p7zip", "label": 0, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "zip up a folder to send by email", "line": "p7zip -k {{path/to/file}}", "label": 0, "why": "7z of a file, not a folder", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "zip up a folder to send by email", "line": "tar -z -c -f {{archive}}", "label": 0, "why": "no folder operand", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "zip up a folder to send by email", "line": "tar czf {{path/to/target.tar.gz}} -C {{path/to/directory}} .", "label": 1, "why": "", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "zip up a folder to send by email", "line": "zip -r", "label": 0, "why": "no operands", "by": "claude-opus-5-5", "date": "2026-09-28"}
+{"q": "zip up a folder to send by email", "line": "zip -r {{path/to/compressed.zip}} folder", "label": 0, "why": "literal 'folder'", "by": "claude-opus-5-5", "date": "2026-09-28"}

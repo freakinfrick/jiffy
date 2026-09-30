@@ -1,0 +1,1402 @@
+{
+ "config": {
+  "title": "JIFFY: DOES IT DO IT?",
+  "question": "Would running this line (after filling any {{blank}}) do what the person asked?",
+  "yes": {
+   "label": "DOES IT",
+   "hint": "right tool, right options; a {{blank}} is fine if the request didn't say what goes there"
+  },
+  "no": {
+   "label": "DOESN'T",
+   "hint": "wrong tool, wrong or missing option, a blank the request already answered, or a stray example value"
+  },
+  "tags": [
+   "wrong tool",
+   "wrong/missing option",
+   "blank should be filled",
+   "stray example value",
+   "needs sudo",
+   "unsafe"
+  ],
+  "fields": {
+   "meta": "cmd",
+   "top": "request",
+   "body": "line"
+  },
+  "field_labels": {
+   "top": "REQUEST",
+   "body": "LINE"
+  },
+  "highlight_numbers": false,
+  "round_size": 25,
+  "footnote": "Judge it for Ubuntu with GNU tools. Unsure is fine (down arrow / space).",
+  "done_message": "All 195 labelled. Tell Claude you're done."
+ },
+ "cards": [
+  {
+   "id": "d3b853ef1f",
+   "request": "connect to a wifi network from the terminal",
+   "line": "sudo wpa_cli en {{number}}",
+   "cmd": "wpa_cli",
+   "gold": null
+  },
+  {
+   "id": "41c1b533d1",
+   "request": "run a command once at a specific time later today",
+   "line": "at {{hh:mm}}",
+   "cmd": "at",
+   "gold": null
+  },
+  {
+   "id": "8a1054ed37",
+   "request": "give my user ownership of everything in this directory",
+   "line": "sudo -D directory -u {{user}}",
+   "cmd": "sudo",
+   "gold": null
+  },
+  {
+   "id": "85372ba016",
+   "request": "trace the route packets take to a server",
+   "line": "ping 10.0.0.1",
+   "cmd": "ping",
+   "gold": null
+  },
+  {
+   "id": "08da74d11e",
+   "request": "delete a folder that still has stuff in it",
+   "line": "sh -c \"{{command}}\"",
+   "cmd": "sh",
+   "gold": null
+  },
+  {
+   "id": "19df3e6569",
+   "request": "encrypt a file with a password",
+   "line": "openssl enc -pass {{arg}} -k {{password}} -in {{path/to/file}} encrypt",
+   "cmd": "openssl enc",
+   "gold": null
+  },
+  {
+   "id": "261f008989",
+   "request": "switch to a different user account",
+   "line": "su {{username}}",
+   "cmd": "su",
+   "gold": null
+  },
+  {
+   "id": "33b389afd8",
+   "request": "list the usb drives and hard disks plugged in",
+   "line": "lsusb",
+   "cmd": "lsusb",
+   "gold": null
+  },
+  {
+   "id": "109c10bfe2",
+   "request": "list the usb devices connected",
+   "line": "lsusb",
+   "cmd": "lsusb",
+   "gold": null
+  },
+  {
+   "id": "e61394c54b",
+   "request": "give my user ownership of everything in this directory",
+   "line": "chown -R {{path/to/file}}",
+   "cmd": "chown",
+   "gold": null
+  },
+  {
+   "id": "1a36cee0ab",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "gawk -F ',' '{print $NF}' {{path/to/file}}",
+   "cmd": "gawk",
+   "gold": null
+  },
+  {
+   "id": "215b681820",
+   "request": "search for a package by keyword",
+   "line": "apt search {{package}}",
+   "cmd": "apt",
+   "gold": null
+  },
+  {
+   "id": "505ef7e114",
+   "request": "log in to another computer remotely over a secure shell",
+   "line": "tailscale ssh {{username}}@{{host}}",
+   "cmd": "tailscale ssh",
+   "gold": null
+  },
+  {
+   "id": "8ef3c1fcfa",
+   "request": "list every package installed",
+   "line": "dpkg -l {{pattern}}",
+   "cmd": "dpkg",
+   "gold": null
+  },
+  {
+   "id": "84ec0397bf",
+   "request": "show lines that are in one sorted file but not the other",
+   "line": "diff {{path/to/old_file}} {{path/to/new_file}}",
+   "cmd": "diff",
+   "gold": null
+  },
+  {
+   "id": "56876c8c7d",
+   "request": "log in to another computer remotely over a secure shell",
+   "line": "ssh {{username}}@{{remote_host}}",
+   "cmd": "ssh",
+   "gold": null
+  },
+  {
+   "id": "19956b93ca",
+   "request": "reboot the computer",
+   "line": "poweroff --reboot",
+   "cmd": "poweroff",
+   "gold": null
+  },
+  {
+   "id": "9529076ea4",
+   "request": "look inside a zip without extracting it",
+   "line": "zipinfo -1 {{path/to/archive.zip}}",
+   "cmd": "zipinfo",
+   "gold": null
+  },
+  {
+   "id": "b46849a78d",
+   "request": "log in to another computer remotely over a secure shell",
+   "line": "login -h {{host}} {{user}}",
+   "cmd": "login",
+   "gold": null
+  },
+  {
+   "id": "d5cd9a61a6",
+   "request": "list the network cards on this machine and whether they are up",
+   "line": "nmcli d",
+   "cmd": "nmcli device",
+   "gold": null
+  },
+  {
+   "id": "be08d87064",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "tldr magick convert",
+   "cmd": "convert",
+   "gold": null
+  },
+  {
+   "id": "34077282e4",
+   "request": "find which command does something when I only know a keyword",
+   "line": "apropos {{keyword}}",
+   "cmd": "apropos",
+   "gold": null
+  },
+  {
+   "id": "6c924ecd3f",
+   "request": "connect to a wifi network from the terminal",
+   "line": "tldr nmcli device",
+   "cmd": "nmcli",
+   "gold": null
+  },
+  {
+   "id": "1747766c58",
+   "request": "save my work in progress without committing so I can switch branches",
+   "line": "patch -i {{patch.diff}} -p 1",
+   "cmd": "patch",
+   "gold": null
+  },
+  {
+   "id": "32e10e1c7e",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "tldr magick mogrify",
+   "cmd": "mogrify",
+   "gold": null
+  },
+  {
+   "id": "0a647fdc73",
+   "request": "put a user in the docker group",
+   "line": "gpasswd -a {{user}} docker",
+   "cmd": "gpasswd",
+   "gold": null
+  },
+  {
+   "id": "bdc74f2072",
+   "request": "unpack a .tar.gz archive",
+   "line": "p7zip -d {{compressed.ext}}.7z",
+   "cmd": "p7zip",
+   "gold": null
+  },
+  {
+   "id": "4dc46d62d1",
+   "request": "switch to a different user account",
+   "line": "builtin {{command}}",
+   "cmd": "builtin",
+   "gold": null
+  },
+  {
+   "id": "d91476a4a2",
+   "request": "copy a whole folder and everything inside it somewhere else",
+   "line": "cp -r {{path/to/source_directory}} {{path/to/target_directory}}",
+   "cmd": "cp",
+   "gold": null
+  },
+  {
+   "id": "3fe5973ff0",
+   "request": "set a job to run every night at 3am",
+   "line": "0 10 * * * {{command_to_execute}}",
+   "cmd": "crontab",
+   "gold": null
+  },
+  {
+   "id": "0b5b698259",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "cut -f {{list}} -d {{delim}}",
+   "cmd": "cut",
+   "gold": null
+  },
+  {
+   "id": "0995b4fc28",
+   "request": "what time is it in utc",
+   "line": "timedatectl",
+   "cmd": "timedatectl",
+   "gold": null
+  },
+  {
+   "id": "dcac8e439b",
+   "request": "print the absolute path of a file",
+   "line": "realpath {{path/to/file}}",
+   "cmd": "realpath",
+   "gold": null
+  },
+  {
+   "id": "443ea797a5",
+   "request": "run a command as the administrator",
+   "line": "sudo {{less /var/log/syslog}}",
+   "cmd": "sudo",
+   "gold": null
+  },
+  {
+   "id": "cfa6a23963",
+   "request": "check a disk's health",
+   "line": "sudo hdparm -I {{/dev/device}}",
+   "cmd": "hdparm",
+   "gold": null
+  },
+  {
+   "id": "868568d3e7",
+   "request": "switch to a different user account",
+   "line": "su",
+   "cmd": "su",
+   "gold": null
+  },
+  {
+   "id": "ee79c629ba",
+   "request": "reboot the computer",
+   "line": "reboot",
+   "cmd": "reboot",
+   "gold": null
+  },
+  {
+   "id": "0a533ab210",
+   "request": "list every package installed",
+   "line": "apt list -i",
+   "cmd": "apt list",
+   "gold": null
+  },
+  {
+   "id": "71ae728066",
+   "request": "pause for 5 seconds in a script",
+   "line": "wait",
+   "cmd": "wait",
+   "gold": null
+  },
+  {
+   "id": "9cecdd327e",
+   "request": "find which command does something when I only know a keyword",
+   "line": "whatis -r 'keyword'",
+   "cmd": "whatis",
+   "gold": null
+  },
+  {
+   "id": "6c550c9191",
+   "request": "unpack a .tar.gz archive",
+   "line": "gzip -d {{path/to/file.gz}}",
+   "cmd": "gzip",
+   "gold": null
+  },
+  {
+   "id": "6c18fda330",
+   "request": "show lines that are in one sorted file but not the other",
+   "line": "sdiff {{path/to/file1}} {{path/to/file2}}",
+   "cmd": "sdiff",
+   "gold": null
+  },
+  {
+   "id": "4c2436ef74",
+   "request": "who has logged into this machine recently",
+   "line": "lastlog",
+   "cmd": "lastlog",
+   "gold": null
+  },
+  {
+   "id": "4dd0a0b573",
+   "request": "send a file to a remote server",
+   "line": "rsync {{path/to/source}} {{path/to/destination}}",
+   "cmd": "rsync",
+   "gold": null
+  },
+  {
+   "id": "7f011a0e48",
+   "request": "find which command does something when I only know a keyword",
+   "line": "whatis keyword",
+   "cmd": "whatis",
+   "gold": null
+  },
+  {
+   "id": "e064aa3daf",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "truncate -s -2G {{path/to/file}}",
+   "cmd": "truncate",
+   "gold": null
+  },
+  {
+   "id": "3e881c20df",
+   "request": "zip up a folder to send by email",
+   "line": "tar czf {{path/to/target.tar.gz}} -C {{path/to/directory}} .",
+   "cmd": "tar",
+   "gold": null
+  },
+  {
+   "id": "15d4ce2cc2",
+   "request": "find the process id of firefox",
+   "line": "pidof {{bash}}",
+   "cmd": "pidof",
+   "gold": null
+  },
+  {
+   "id": "b0c0eed2de",
+   "request": "search for a package by keyword",
+   "line": "npm s {{keyword}}",
+   "cmd": "npm search",
+   "gold": null
+  },
+  {
+   "id": "4dd677291b",
+   "request": "free up space by finding the largest files on the whole drive",
+   "line": "du -a drive",
+   "cmd": "du",
+   "gold": null
+  },
+  {
+   "id": "05b92ee6d5",
+   "request": "delete a folder that still has stuff in it",
+   "line": "rm -r",
+   "cmd": "rm",
+   "gold": null
+  },
+  {
+   "id": "6323544af7",
+   "request": "check a disk's health",
+   "line": "sudo smartctl -H {{/dev/sdX}}",
+   "cmd": "smartctl",
+   "gold": null
+  },
+  {
+   "id": "9a462e7290",
+   "request": "find the process id of firefox",
+   "line": "htop",
+   "cmd": "htop",
+   "gold": null
+  },
+  {
+   "id": "ec527ca6ad",
+   "request": "number every line of a file",
+   "line": "nl",
+   "cmd": "nl",
+   "gold": null
+  },
+  {
+   "id": "75723f3ec8",
+   "request": "generate a random password",
+   "line": "apg",
+   "cmd": "apg",
+   "gold": null
+  },
+  {
+   "id": "759a4bf58a",
+   "request": "trace the route packets take to a server",
+   "line": "tracepath -p {{33434}} server",
+   "cmd": "tracepath",
+   "gold": null
+  },
+  {
+   "id": "af377a35f0",
+   "request": "which files in here changed in the last day",
+   "line": "git log --stat",
+   "cmd": "git log",
+   "gold": null
+  },
+  {
+   "id": "065f0b1986",
+   "request": "send a file to a remote server",
+   "line": "curl -X POST -d '{{name=bob}}' {{http://example.com/form}}",
+   "cmd": "curl",
+   "gold": null
+  },
+  {
+   "id": "7f46e7282c",
+   "request": "show lines that are in one sorted file but not the other",
+   "line": "comm {{file1}} {{file2}}",
+   "cmd": "comm",
+   "gold": null
+  },
+  {
+   "id": "2f10a895b6",
+   "request": "safely unplug a mounted drive",
+   "line": "eject",
+   "cmd": "eject",
+   "gold": null
+  },
+  {
+   "id": "98ea567ac0",
+   "request": "number every line of a file",
+   "line": "pr -n -D \"{{format}}\" {{path/to/file1 path/to/file2 ...}}",
+   "cmd": "pr",
+   "gold": null
+  },
+  {
+   "id": "0388936d1c",
+   "request": "how much space does each user's home folder take",
+   "line": "ncdu /home",
+   "cmd": "ncdu",
+   "gold": null
+  },
+  {
+   "id": "18ca2f1de1",
+   "request": "delete a folder that still has stuff in it",
+   "line": "sh",
+   "cmd": "sh",
+   "gold": null
+  },
+  {
+   "id": "4798b9dc5f",
+   "request": "list every package installed",
+   "line": "dpkg-query -l",
+   "cmd": "dpkg-query",
+   "gold": null
+  },
+  {
+   "id": "2c8c54e04a",
+   "request": "who has logged into this machine recently",
+   "line": "last",
+   "cmd": "last",
+   "gold": null
+  },
+  {
+   "id": "7880be135e",
+   "request": "see which dns server this machine uses",
+   "line": "nslookup",
+   "cmd": "nslookup",
+   "gold": null
+  },
+  {
+   "id": "703c179a06",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "cut -f 2,6 {{path/to/file}}",
+   "cmd": "cut",
+   "gold": null
+  },
+  {
+   "id": "9e275f0cfa",
+   "request": "change the computer's name",
+   "line": "sudo hostnamectl set-hostname \"{{hostname}}\"",
+   "cmd": "hostnamectl",
+   "gold": null
+  },
+  {
+   "id": "4703a923f2",
+   "request": "remove blank lines from a file",
+   "line": "sed -i '/^[[:space:]]*$/d' {{path/to/file}}",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "a68e46bbcd",
+   "request": "find which command does something when I only know a keyword",
+   "line": "apropos {{regex}}",
+   "cmd": "apropos",
+   "gold": null
+  },
+  {
+   "id": "4f5e1b5091",
+   "request": "copy a whole folder and everything inside it somewhere else",
+   "line": "install -D {{path/to/source_file1 path/to/source_file2 ...}} {{path/to/destination}}",
+   "cmd": "install",
+   "gold": null
+  },
+  {
+   "id": "a97e228801",
+   "request": "copy a whole folder and everything inside it somewhere else",
+   "line": "rsync -a {{path/to/source}} {{path/to/destination}}",
+   "cmd": "rsync",
+   "gold": null
+  },
+  {
+   "id": "7b64475370",
+   "request": "turn all the lowercase letters in a file into capitals",
+   "line": "tr < {{path/to/file}} \"[:lower:]\" \"[:upper:]\"",
+   "cmd": "tr",
+   "gold": null
+  },
+  {
+   "id": "245e6ed538",
+   "request": "check the spelling of words in a document",
+   "line": "aspell check {{path/to/file}}",
+   "cmd": "aspell",
+   "gold": null
+  },
+  {
+   "id": "76630cb09a",
+   "request": "see the logs for one particular service",
+   "line": "docker compose logs {{service_name}}",
+   "cmd": "docker compose logs",
+   "gold": null
+  },
+  {
+   "id": "92aa0a5d0c",
+   "request": "change my password",
+   "line": "passwd",
+   "cmd": "passwd",
+   "gold": null
+  },
+  {
+   "id": "3c9dc04961",
+   "request": "list the network cards on this machine and whether they are up",
+   "line": "ip l",
+   "cmd": "ip link",
+   "gold": null
+  },
+  {
+   "id": "4e79c6427e",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "cut | sed 's/apple/mango/g'",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "a459127b72",
+   "request": "zip up a folder to send by email",
+   "line": "p7zip -k {{path/to/file}}",
+   "cmd": "p7zip",
+   "gold": null
+  },
+  {
+   "id": "fcfb01ab1b",
+   "request": "number every line of a file",
+   "line": "gawk 'NR%3==1' {{path/to/file}}",
+   "cmd": "gawk",
+   "gold": null
+  },
+  {
+   "id": "9c20a0fa64",
+   "request": "zip up a folder to send by email",
+   "line": "zip -r",
+   "cmd": "zip",
+   "gold": null
+  },
+  {
+   "id": "859d36f6e6",
+   "request": "save my work in progress without committing so I can switch branches",
+   "line": "git stash",
+   "cmd": "git stash",
+   "gold": null
+  },
+  {
+   "id": "a2c661ab71",
+   "request": "unpack a .tar.gz archive",
+   "line": "tar -f {{archive}} -x -z",
+   "cmd": "tar",
+   "gold": null
+  },
+  {
+   "id": "5b91544b4c",
+   "request": "see which dns server this machine uses",
+   "line": "resolvectl",
+   "cmd": "resolvectl",
+   "gold": null
+  },
+  {
+   "id": "117ccde405",
+   "request": "switch to a different user account",
+   "line": "login {{user}}",
+   "cmd": "login",
+   "gold": null
+  },
+  {
+   "id": "190167d3a9",
+   "request": "wrap long lines of text to 80 characters",
+   "line": "sed -i 's/apple/mango/g' {{path/to/file}}",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "33c8346ee7",
+   "request": "give my user ownership of everything in this directory",
+   "line": "builtin {{command}}",
+   "cmd": "builtin",
+   "gold": null
+  },
+  {
+   "id": "9ff3e25d17",
+   "request": "trace the route packets take to a server",
+   "line": "tracepath",
+   "cmd": "tracepath",
+   "gold": null
+  },
+  {
+   "id": "86acfbe4ea",
+   "request": "free up space by finding the largest files on the whole drive",
+   "line": "ncdu /",
+   "cmd": "ncdu",
+   "gold": null
+  },
+  {
+   "id": "6489e74b31",
+   "request": "find the process id of firefox",
+   "line": "pidof firefox",
+   "cmd": "pidof",
+   "gold": null
+  },
+  {
+   "id": "b14a1d3b4b",
+   "request": "wrap long lines of text to 80 characters",
+   "line": "fmt -w 80 {{path/to/file}}",
+   "cmd": "fmt",
+   "gold": null
+  },
+  {
+   "id": "aa1bace063",
+   "request": "save my work in progress without committing so I can switch branches",
+   "line": "xfce4-terminal --command \"{{command_with_args}}\"",
+   "cmd": "xfce4-terminal",
+   "gold": null
+  },
+  {
+   "id": "9fd60bb4d7",
+   "request": "safely unplug a mounted drive",
+   "line": "udisksctl power-off -b {{/dev/sdX}}",
+   "cmd": "udisksctl",
+   "gold": null
+  },
+  {
+   "id": "e2eeec59ff",
+   "request": "set a job to run every night at 3am",
+   "line": "cloud-init-per 3am {{path/to/file}} {{cmd}} {{arg1}}",
+   "cmd": "cloud-init-per",
+   "gold": null
+  },
+  {
+   "id": "7117853cf1",
+   "request": "set a job to run every night at 3am",
+   "line": "crontab {{path/to/file}}",
+   "cmd": "crontab",
+   "gold": null
+  },
+  {
+   "id": "9edd47aabe",
+   "request": "connect to a wifi network from the terminal",
+   "line": "tldr nmcli connection",
+   "cmd": "nmcli",
+   "gold": null
+  },
+  {
+   "id": "066a48706e",
+   "request": "add a new user account to this machine",
+   "line": "sudo useradd {{username}}",
+   "cmd": "useradd",
+   "gold": null
+  },
+  {
+   "id": "b2f3560baa",
+   "request": "how much space does each user's home folder take",
+   "line": "xfs_quota",
+   "cmd": "xfs_quota",
+   "gold": null
+  },
+  {
+   "id": "fc027aa038",
+   "request": "put a user in the docker group",
+   "line": "sudo usermod -aG docker {{username}}",
+   "cmd": "usermod",
+   "gold": null
+  },
+  {
+   "id": "ccb380ac5b",
+   "request": "search for a package by keyword",
+   "line": "apt-cache search {{query}}",
+   "cmd": "apt-cache",
+   "gold": null
+  },
+  {
+   "id": "6f54d176b3",
+   "request": "list the usb devices connected",
+   "line": "xinput list",
+   "cmd": "xinput",
+   "gold": null
+  },
+  {
+   "id": "269bc85ad2",
+   "request": "remove blank lines from a file",
+   "line": "cat {{path/to/file}} | grep -v \"{{search_pattern}}\"",
+   "cmd": "grep",
+   "gold": null
+  },
+  {
+   "id": "fc6f1b3a86",
+   "request": "trace the route packets take to a server",
+   "line": "tracepath -p {{33434}} {{host}}",
+   "cmd": "tracepath",
+   "gold": null
+  },
+  {
+   "id": "2d9ae246ad",
+   "request": "set a job to run every night at 3am",
+   "line": "crontab -e",
+   "cmd": "crontab",
+   "gold": null
+  },
+  {
+   "id": "ddf40f8ed8",
+   "request": "check a disk's health",
+   "line": "iostat -xN {{sda}}",
+   "cmd": "iostat",
+   "gold": null
+  },
+  {
+   "id": "e67bb5e81d",
+   "request": "connect to a wifi network from the terminal",
+   "line": "nmcli d w c {{ssid}} -a",
+   "cmd": "nmcli device",
+   "gold": null
+  },
+  {
+   "id": "3f85458d40",
+   "request": "run a command once at a specific time later today",
+   "line": "echo \"{{./make_db_backup.sh}}\" | batch",
+   "cmd": "batch",
+   "gold": null
+  },
+  {
+   "id": "dbb2973122",
+   "request": "compress a single file as small as possible",
+   "line": "gzip -{{1..9}} -c {{path/to/file}} > {{path/to/compressed_file.gz}}",
+   "cmd": "gzip",
+   "gold": null
+  },
+  {
+   "id": "4d4fa5dac8",
+   "request": "pull the latest changes from the server",
+   "line": "git pull",
+   "cmd": "git pull",
+   "gold": null
+  },
+  {
+   "id": "0532c04d3b",
+   "request": "turn all the lowercase letters in a file into capitals",
+   "line": "sed -i 's/apple/mango/g' {{path/to/file}}",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "a414e84c28",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "mogrify -extent {{geometry}} -geometry {{geometry}} -scale {{geometry}} -resize {{size}}",
+   "cmd": "mogrify",
+   "gold": null
+  },
+  {
+   "id": "563bc0c4ea",
+   "request": "what time is it in utc",
+   "line": "zdump utc",
+   "cmd": "zdump",
+   "gold": null
+  },
+  {
+   "id": "c4bc1b0667",
+   "request": "see which dns server this machine uses",
+   "line": "cat {{path/to/file}}",
+   "cmd": "cat",
+   "gold": null
+  },
+  {
+   "id": "6910f0677d",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "awk 'BEGIN {FS=\":\";printf \"%-20s %6s %25s\\n\", \"Name\", \"UID\", \"Shell\"} $4 >= 1000 {printf \"%-20s %6d %25s\\n\", $1, $4, $7}' /etc/passwd",
+   "cmd": "awk",
+   "gold": null
+  },
+  {
+   "id": "ad418e2b01",
+   "request": "unpack a .tar.gz archive",
+   "line": "7z x {{path/to/archive.7z}}",
+   "cmd": "7z",
+   "gold": null
+  },
+  {
+   "id": "e5ff73004d",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "sed",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "70219859eb",
+   "request": "pause for 5 seconds in a script",
+   "line": "sleep 5",
+   "cmd": "sleep",
+   "gold": null
+  },
+  {
+   "id": "82b99b8350",
+   "request": "how much space does each user's home folder take",
+   "line": "du -s",
+   "cmd": "du",
+   "gold": null
+  },
+  {
+   "id": "38bc63200a",
+   "request": "print the absolute path of a file",
+   "line": "realpath {{path/to/file_or_directory}}",
+   "cmd": "realpath",
+   "gold": null
+  },
+  {
+   "id": "207ffd891c",
+   "request": "free up space by finding the largest files on the whole drive",
+   "line": "df",
+   "cmd": "df",
+   "gold": null
+  },
+  {
+   "id": "9f2ed4be67",
+   "request": "free up space by finding the largest files on the whole drive",
+   "line": "du -ah -t {{1G|1024M|1048576K}} .[^.]* *",
+   "cmd": "du",
+   "gold": null
+  },
+  {
+   "id": "dde3f97217",
+   "request": "run a command once at a specific time later today",
+   "line": "batch -t {{time}} command",
+   "cmd": "batch",
+   "gold": null
+  },
+  {
+   "id": "f07d50c22e",
+   "request": "number every line of a file",
+   "line": "file | sed -n '1p'",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "f0706e7a51",
+   "request": "turn all the lowercase letters in a file into capitals",
+   "line": "perl -i'.bak' -p -e 's/regex/{{replacement}}/g' {{path/to/files}}",
+   "cmd": "perl",
+   "gold": null
+  },
+  {
+   "id": "e64d91dad4",
+   "request": "list the network cards on this machine and whether they are up",
+   "line": "networkctl",
+   "cmd": "networkctl",
+   "gold": null
+  },
+  {
+   "id": "05d1437007",
+   "request": "compress a single file as small as possible",
+   "line": "xz -9 {{path/to/file}}",
+   "cmd": "xz",
+   "gold": null
+  },
+  {
+   "id": "33d972131c",
+   "request": "pull the latest changes from the server",
+   "line": "rsync -r --delete rsync://{{host}}:{{path/to/source}} {{path/to/destination}}",
+   "cmd": "rsync",
+   "gold": null
+  },
+  {
+   "id": "d957aff771",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "cut -f 2 -d :",
+   "cmd": "cut",
+   "gold": null
+  },
+  {
+   "id": "a08a78ab41",
+   "request": "list the usb drives and hard disks plugged in",
+   "line": "udisksctl status",
+   "cmd": "udisksctl",
+   "gold": null
+  },
+  {
+   "id": "6cfee69bef",
+   "request": "give my user ownership of everything in this directory",
+   "line": "sudo -u tex -g {{group}} {{id -a}}",
+   "cmd": "sudo",
+   "gold": null
+  },
+  {
+   "id": "63274e5c70",
+   "request": "show lines that are in one sorted file but not the other",
+   "line": "comm -3 {{path/to/file}} {{path/to/file}}",
+   "cmd": "comm",
+   "gold": null
+  },
+  {
+   "id": "1e93910ca3",
+   "request": "pause for 5 seconds in a script",
+   "line": "sh -c \"{{command}}\"",
+   "cmd": "sh",
+   "gold": null
+  },
+  {
+   "id": "7e6510e0a0",
+   "request": "wrap long lines of text to 80 characters",
+   "line": "fmt -w 80",
+   "cmd": "fmt",
+   "gold": null
+  },
+  {
+   "id": "57f73fc59a",
+   "request": "number every line of a file",
+   "line": "nl -b line {{path/to/file}}",
+   "cmd": "nl",
+   "gold": null
+  },
+  {
+   "id": "c129b8aa8e",
+   "request": "run a command once at a specific time later today",
+   "line": "at -t {{time}} command",
+   "cmd": "at",
+   "gold": null
+  },
+  {
+   "id": "b49c0a5fff",
+   "request": "print the absolute path of a file",
+   "line": "namei {{path/to/a}} {{path/to/b}} {{path/to/c}}",
+   "cmd": "namei",
+   "gold": null
+  },
+  {
+   "id": "29df9ff281",
+   "request": "unpack a .tar.gz archive",
+   "line": "p7zip -d",
+   "cmd": "p7zip",
+   "gold": null
+  },
+  {
+   "id": "587e3e91d5",
+   "request": "read the kernel's messages about hardware",
+   "line": "journalctl -n {{n}} -f",
+   "cmd": "journalctl",
+   "gold": null
+  },
+  {
+   "id": "b63dad3cad",
+   "request": "reboot the computer",
+   "line": "systemctl reboot",
+   "cmd": "systemctl reboot",
+   "gold": null
+  },
+  {
+   "id": "ddd49e8ef4",
+   "request": "read the kernel's messages about hardware",
+   "line": "sudo dmesg",
+   "cmd": "dmesg",
+   "gold": null
+  },
+  {
+   "id": "fb94b24635",
+   "request": "see the logs for one particular service",
+   "line": "journalctl -u {{unit}}",
+   "cmd": "journalctl",
+   "gold": null
+  },
+  {
+   "id": "f1e4cbd491",
+   "request": "see which dns server this machine uses",
+   "line": "nslookup {{example.com}}",
+   "cmd": "nslookup",
+   "gold": null
+  },
+  {
+   "id": "d94b79af07",
+   "request": "run a command as the administrator",
+   "line": "sudo runuser administrator -c '{{command}}'",
+   "cmd": "runuser",
+   "gold": null
+  },
+  {
+   "id": "0418047cdb",
+   "request": "who has logged into this machine recently",
+   "line": "who",
+   "cmd": "who",
+   "gold": null
+  },
+  {
+   "id": "b14c4b4928",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "convert -extent {{geometry}} -geometry {{geometry}} -scale {{geometry}} -resize {{size}}",
+   "cmd": "convert",
+   "gold": null
+  },
+  {
+   "id": "209b06056e",
+   "request": "how much space does each user's home folder take",
+   "line": "du -sh /home",
+   "cmd": "du",
+   "gold": null
+  },
+  {
+   "id": "1dbf4e5f27",
+   "request": "look inside a zip without extracting it",
+   "line": "file -z {{path/to/file.zip}}",
+   "cmd": "file",
+   "gold": null
+  },
+  {
+   "id": "47fb918ae7",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "convert -scale {{geometry}} -resize {{size}}",
+   "cmd": "convert",
+   "gold": null
+  },
+  {
+   "id": "0418b9a682",
+   "request": "pause for 5 seconds in a script",
+   "line": "bash -c \"{{echo 'bash is executed'}}\"",
+   "cmd": "bash",
+   "gold": null
+  },
+  {
+   "id": "b721601f5f",
+   "request": "give my user ownership of everything in this directory",
+   "line": "sudo chown -R tex .",
+   "cmd": "chown",
+   "gold": null
+  },
+  {
+   "id": "df383b9b4c",
+   "request": "delete a folder that still has stuff in it",
+   "line": "rm -r {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}",
+   "cmd": "rm",
+   "gold": null
+  },
+  {
+   "id": "4e12418909",
+   "request": "search for a package by keyword",
+   "line": "cargo search {{query}}",
+   "cmd": "cargo search",
+   "gold": null
+  },
+  {
+   "id": "68beb6a3b5",
+   "request": "which files in here changed in the last day",
+   "line": "find {{path/to/directory}} -daystart -mtime {{-1}} -exec {{tar -cvf archive.tar}} {} \\+",
+   "cmd": "find",
+   "gold": null
+  },
+  {
+   "id": "3545fa74e2",
+   "request": "what time is it in utc",
+   "line": "date -u",
+   "cmd": "date",
+   "gold": null
+  },
+  {
+   "id": "b648266660",
+   "request": "trace the route packets take to a server",
+   "line": "mtr {{example.com}}",
+   "cmd": "mtr",
+   "gold": null
+  },
+  {
+   "id": "756b291292",
+   "request": "delete a folder that still has stuff in it",
+   "line": "builtin {{command}}",
+   "cmd": "builtin",
+   "gold": null
+  },
+  {
+   "id": "ef3ab1bf13",
+   "request": "safely unplug a mounted drive",
+   "line": "sudo umount {{path/to/mounted_directory}}",
+   "cmd": "umount",
+   "gold": null
+  },
+  {
+   "id": "5f70688f81",
+   "request": "cut out just the second field of each line separated by colons",
+   "line": "awk -F :",
+   "cmd": "awk",
+   "gold": null
+  },
+  {
+   "id": "6e051f3069",
+   "request": "list the usb drives and hard disks plugged in",
+   "line": "lsblk",
+   "cmd": "lsblk",
+   "gold": null
+  },
+  {
+   "id": "6f14078f2a",
+   "request": "change the computer's name",
+   "line": "hostname {{new_hostname}}",
+   "cmd": "hostname",
+   "gold": null
+  },
+  {
+   "id": "a44ca37d38",
+   "request": "encrypt a file with a password",
+   "line": "py3rsa-encrypt -i {{input}} {{PUBLIC_KEY}}",
+   "cmd": "py3rsa-encrypt",
+   "gold": null
+  },
+  {
+   "id": "2af34bb9b9",
+   "request": "pull the latest changes from the server",
+   "line": "curl -O {{https://example.com/filename.zip}}",
+   "cmd": "curl",
+   "gold": null
+  },
+  {
+   "id": "d9b57df589",
+   "request": "trace the route packets take to a server",
+   "line": "mtr {{path/to/file}}",
+   "cmd": "mtr",
+   "gold": null
+  },
+  {
+   "id": "0a4c220c50",
+   "request": "zip up a folder to send by email",
+   "line": "p7zip",
+   "cmd": "p7zip",
+   "gold": null
+  },
+  {
+   "id": "9560f74de1",
+   "request": "zip up a folder to send by email",
+   "line": "zip -r {{path/to/compressed.zip}} folder",
+   "cmd": "zip",
+   "gold": null
+  },
+  {
+   "id": "d3369128f4",
+   "request": "zip up a folder to send by email",
+   "line": "tar -z -c -f {{archive}}",
+   "cmd": "tar",
+   "gold": null
+  },
+  {
+   "id": "f82c770213",
+   "request": "set a job to run every night at 3am",
+   "line": "at 3am",
+   "cmd": "at",
+   "gold": null
+  },
+  {
+   "id": "3cbb72db54",
+   "request": "show lines that are in one sorted file but not the other",
+   "line": "diff --suppress-common-lines {{path/to/file}}",
+   "cmd": "diff",
+   "gold": null
+  },
+  {
+   "id": "110707b2e7",
+   "request": "which files in here changed in the last day",
+   "line": "git log --name-only --name-status --since={{date}} --stat",
+   "cmd": "git log",
+   "gold": null
+  },
+  {
+   "id": "e3f4b51597",
+   "request": "compress a single file as small as possible",
+   "line": "p7zip {{path/to/file}}",
+   "cmd": "p7zip",
+   "gold": null
+  },
+  {
+   "id": "8a277955ef",
+   "request": "what time is it in utc",
+   "line": "date -u +%Y-%m-%dT%H:%M:%SZ",
+   "cmd": "date",
+   "gold": null
+  },
+  {
+   "id": "a30d1c4652",
+   "request": "unpack a .tar.gz archive",
+   "line": "tar xvf {{path/to/source.tar.ext}}",
+   "cmd": "tar",
+   "gold": null
+  },
+  {
+   "id": "60aed03212",
+   "request": "which files in here changed in the last day",
+   "line": "git status",
+   "cmd": "git status",
+   "gold": null
+  },
+  {
+   "id": "e35270340f",
+   "request": "run a command as the administrator",
+   "line": "pkexec {{command}}",
+   "cmd": "pkexec",
+   "gold": null
+  },
+  {
+   "id": "eea9e8c9e7",
+   "request": "find the process id of firefox",
+   "line": "ps aux | grep firefox",
+   "cmd": "ps",
+   "gold": null
+  },
+  {
+   "id": "69f91ff140",
+   "request": "number every line of a file",
+   "line": "sed",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "03ef380465",
+   "request": "pull the latest changes from the server",
+   "line": "git sync",
+   "cmd": "git sync",
+   "gold": null
+  },
+  {
+   "id": "de33e8ce6d",
+   "request": "which files in here changed in the last day",
+   "line": "git log --name-only --name-status --since={{date}}",
+   "cmd": "git log",
+   "gold": null
+  },
+  {
+   "id": "1d072c687e",
+   "request": "look inside a zip without extracting it",
+   "line": "funzip {{path/to/archive.zip}}",
+   "cmd": "funzip",
+   "gold": null
+  },
+  {
+   "id": "e739fd02bf",
+   "request": "print the absolute path of a file",
+   "line": "dpkg-realpath {{path/to/file}}",
+   "cmd": "dpkg-realpath",
+   "gold": null
+  },
+  {
+   "id": "7f7fcb1149",
+   "request": "add a new user account to this machine",
+   "line": "adduser {{username}}",
+   "cmd": "adduser",
+   "gold": null
+  },
+  {
+   "id": "877a44d85d",
+   "request": "wrap long lines of text to 80 characters",
+   "line": "fold -w 80 {{path/to/file}}",
+   "cmd": "fold",
+   "gold": null
+  },
+  {
+   "id": "f0a002ad26",
+   "request": "find the process id of firefox",
+   "line": "htop -F {{--filter=filter}}",
+   "cmd": "htop",
+   "gold": null
+  },
+  {
+   "id": "6eb71af489",
+   "request": "which files in here changed in the last day",
+   "line": "find . -daystart -mtime {{-1}} -exec {{tar -cvf archive.tar}} {} \\+",
+   "cmd": "find",
+   "gold": null
+  },
+  {
+   "id": "49fa8a4774",
+   "request": "send a file to a remote server",
+   "line": "scp {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}",
+   "cmd": "scp",
+   "gold": null
+  },
+  {
+   "id": "1817920858",
+   "request": "run a command once at a specific time later today",
+   "line": "sudo systemd-run --on-calendar={{calendar_event}} {{command}} {{argument1 argument2 ...}}",
+   "cmd": "systemd-run",
+   "gold": null
+  },
+  {
+   "id": "7105b363c7",
+   "request": "switch to a different user account",
+   "line": "login",
+   "cmd": "login",
+   "gold": null
+  },
+  {
+   "id": "febc397dc9",
+   "request": "wrap long lines of text to 80 characters",
+   "line": "fold",
+   "cmd": "fold",
+   "gold": null
+  },
+  {
+   "id": "24709696d0",
+   "request": "number every line of a file",
+   "line": "{{command}} | sed -n '1p'",
+   "cmd": "sed",
+   "gold": null
+  },
+  {
+   "id": "c26fef91bc",
+   "request": "shrink a jpeg photo to half its size",
+   "line": "mogrify -scale {{geometry}} -resize {{size}}",
+   "cmd": "mogrify",
+   "gold": null
+  },
+  {
+   "id": "bdf6813d40",
+   "request": "remove blank lines from a file",
+   "line": "cat {{path/to/file}} | git stripspace",
+   "cmd": "git stripspace",
+   "gold": null
+  },
+  {
+   "id": "c012ba11af",
+   "request": "find which command does something when I only know a keyword",
+   "line": "which {{executable}}",
+   "cmd": "which",
+   "gold": null
+  },
+  {
+   "id": "68a8bb1a10",
+   "request": "give my user ownership of everything in this directory",
+   "line": "sudo -u {{user}} -g {{group}} {{id -a}}",
+   "cmd": "sudo",
+   "gold": null
+  },
+  {
+   "id": "f58c6be3c7",
+   "request": "find which command does something when I only know a keyword",
+   "line": "aws help",
+   "cmd": "aws help",
+   "gold": null
+  },
+  {
+   "id": "fff84db338",
+   "request": "set a job to run every night at 3am",
+   "line": "builtin {{command}}",
+   "cmd": "builtin",
+   "gold": null
+  }
+ ]
+}

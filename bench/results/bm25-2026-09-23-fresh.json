@@ -1,0 +1,3478 @@
+{
+ "graph": "bm25",
+ "date": "2026-09-23",
+ "mode": "live",
+ "n_cases": 106,
+ "seed": 0,
+ "judges": [],
+ "top1": 0.25471698113207547,
+ "top1_hits": 27,
+ "stages": [
+  {
+   "node": "retrieve",
+   "kind": "retrieve",
+   "m_median": 120.0,
+   "recall": 0.8867924528301887
+  },
+  {
+   "node": "fill",
+   "kind": "fill",
+   "m_median": 120.0,
+   "recall": 0.8867924528301887
+  },
+  {
+   "node": "gate",
+   "kind": "gate",
+   "m_median": 120.0,
+   "recall": 0.8867924528301887
+  }
+ ],
+ "retrieve_recall": {
+  "@1": 0.25471698113207547,
+  "@5": 0.46226415094339623,
+  "@20": 0.7075471698113207,
+  "@120": 0.8867924528301887
+ },
+ "recall_monotonic": true,
+ "latency_ms": {
+  "p50": 31.4,
+  "p95": 66.225,
+  "mean": 39.59716981132077
+ },
+ "usd": 0,
+ "usd_per_case": 0.0,
+ "usd_estimated": false,
+ "calls_per_node": {
+  "retrieve": 0,
+  "fill": 0,
+  "gate": 0
+ },
+ "degraded_per_node": {},
+ "degraded_total": 0,
+ "cases": [
+  {
+   "q": "copy a whole folder and everything inside it somewhere else",
+   "gold": [
+    "cp",
+    "rsync"
+   ],
+   "chosen": "git filter-repo",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git filter-repo --replace-text <(echo '{{find}}==>{{replacement}}')",
+   "unfilled": 2,
+   "ms": 582.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "delete a folder that still has stuff in it",
+   "gold": [
+    "rm"
+   ],
+   "chosen": "zipdetails",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "zipdetails -h",
+   "unfilled": 0,
+   "ms": 45.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "which files in here changed in the last day",
+   "gold": [
+    "find"
+   ],
+   "chosen": "git checkout-index",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git checkout-index -a",
+   "unfilled": 0,
+   "ms": 80.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "look for a file called config somewhere under my home",
+   "gold": [
+    "find",
+    "locate",
+    "plocate",
+    "fd",
+    "fdfind"
+   ],
+   "chosen": "look",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "look {{prefix}} config",
+   "unfilled": 1,
+   "ms": 43.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "show the folder tree two levels deep",
+   "gold": [
+    "tree",
+    "find"
+   ],
+   "chosen": "tree",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "tree -L 2",
+   "unfilled": 0,
+   "ms": 57.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "see the full details of a file like its size and when it was modified",
+   "gold": [
+    "stat",
+    "ls"
+   ],
+   "chosen": "size",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "size {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 66.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "what type of file is this thing",
+   "gold": [
+    "file"
+   ],
+   "chosen": "file",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "file {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 37.9,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "compare two folders to see which files differ",
+   "gold": [
+    "diff",
+    "rsync"
+   ],
+   "chosen": "xzdiff",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "xzdiff {{path/to/file1}} {{path/to/file2}}",
+   "unfilled": 2,
+   "ms": 30.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "point a link at a directory elsewhere so i can reach it from here",
+   "gold": [
+    "ln"
+   ],
+   "chosen": "link",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "link {{path/to/existing_file}} {{path/to/new_file}}",
+   "unfilled": 2,
+   "ms": 37.9,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "move every jpg in this folder into a subfolder called photos",
+   "gold": [
+    "mv"
+   ],
+   "chosen": "exiftool",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "exiftool photos",
+   "unfilled": 0,
+   "ms": 60.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "free up space by finding the largest files on the whole drive",
+   "gold": [
+    "find",
+    "du",
+    "ncdu"
+   ],
+   "chosen": "e2freefrag",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "e2freefrag {{/dev/sdXN}}",
+   "unfilled": 1,
+   "ms": 35.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "split a huge file into smaller pieces",
+   "gold": [
+    "split"
+   ],
+   "chosen": "split",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "split -l 10 {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 25.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "glue several text files together into one",
+   "gold": [
+    "cat"
+   ],
+   "chosen": "aws glue",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "aws glue list-jobs",
+   "unfilled": 0,
+   "ms": 13.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "make a file read only for everyone",
+   "gold": [
+    "chmod"
+   ],
+   "chosen": "make",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "make",
+   "unfilled": 0,
+   "ms": 29.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "give my user ownership of everything in this directory",
+   "gold": [
+    "chown"
+   ],
+   "chosen": "ownership",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "ownership [OPTIONS]",
+   "unfilled": 0,
+   "ms": 57.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "check what a symbolic link points to",
+   "gold": [
+    "readlink",
+    "ls",
+    "realpath"
+   ],
+   "chosen": "update-alternatives",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "sudo update-alternatives --install {{path/to/symlink}} {{command_name}} {{path/to/command_binary}} {{priority}}",
+   "unfilled": 4,
+   "ms": 31.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "print the absolute path of a file",
+   "gold": [
+    "realpath",
+    "readlink"
+   ],
+   "chosen": "readlink",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "readlink {{path/to/symlink}}",
+   "unfilled": 1,
+   "ms": 41.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "show only the lines of a log that mention error, ignoring case",
+   "gold": [
+    "grep",
+    "rg"
+   ],
+   "chosen": "git log",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git log",
+   "unfilled": 0,
+   "ms": 40.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "how many words are in this essay",
+   "gold": [
+    "wc"
+   ],
+   "chosen": "e2freefrag",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "e2freefrag {{/dev/sdXN}}",
+   "unfilled": 1,
+   "ms": 19.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "flip the order of lines in a file so the last is first",
+   "gold": [
+    "tac"
+   ],
+   "chosen": "combine",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "combine {{path/to/file1}} and {{path/to/file2}}",
+   "unfilled": 2,
+   "ms": 82.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "remove blank lines from a file",
+   "gold": [
+    "sed",
+    "grep",
+    "awk"
+   ],
+   "chosen": "nl",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "nl {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 28.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "turn all the lowercase letters in a file into capitals",
+   "gold": [
+    "tr",
+    "awk",
+    "sed"
+   ],
+   "chosen": "pamoil",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "pamoil {{path/to/input_file.pam}} > {{path/to/output_file.pam}}",
+   "unfilled": 2,
+   "ms": 41.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "cut out just the second field of each line separated by colons",
+   "gold": [
+    "cut",
+    "awk"
+   ],
+   "chosen": "cut",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "{{command}} | cut -c 5",
+   "unfilled": 1,
+   "ms": 34.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "put two files side by side column by column",
+   "gold": [
+    "paste"
+   ],
+   "chosen": "paste",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "paste -s {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 16.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "number every line of a file",
+   "gold": [
+    "nl",
+    "cat"
+   ],
+   "chosen": "csplit",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "csplit {{path/to/file}} 10",
+   "unfilled": 1,
+   "ms": 59.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "show lines that are in one sorted file but not the other",
+   "gold": [
+    "comm",
+    "diff"
+   ],
+   "chosen": "combine",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "combine {{path/to/file1}} and {{path/to/file2}}",
+   "unfilled": 2,
+   "ms": 39.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "wrap long lines of text to 80 characters",
+   "gold": [
+    "fold",
+    "fmt"
+   ],
+   "chosen": "fold",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "fold {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 30.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "view a file starting from the bottom",
+   "gold": [
+    "tail",
+    "less"
+   ],
+   "chosen": "view",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "view {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 35.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "find which files in a project mention a function name",
+   "gold": [
+    "grep",
+    "rg",
+    "ag",
+    "git grep",
+    "git-grep"
+   ],
+   "chosen": "find",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "find {{path/to/directory}} -type f | wc -l",
+   "unfilled": 1,
+   "ms": 76.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "check the spelling of words in a document",
+   "gold": [
+    "aspell",
+    "hunspell",
+    "ispell"
+   ],
+   "chosen": "hunspell",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "hunspell {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 43.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "which drive is almost full",
+   "gold": [
+    "df"
+   ],
+   "chosen": "which",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "which {{executable}}",
+   "unfilled": 1,
+   "ms": 12.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "list the usb drives and hard disks plugged in",
+   "gold": [
+    "lsblk",
+    "fdisk",
+    "blkid"
+   ],
+   "chosen": "eject",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "eject -d",
+   "unfilled": 0,
+   "ms": 34.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "safely unplug a mounted drive",
+   "gold": [
+    "umount",
+    "udisksctl",
+    "eject"
+   ],
+   "chosen": "udiskie-umount",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "udiskie-umount {{path/to/mount}}",
+   "unfilled": 1,
+   "ms": 21.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "check a disk's health",
+   "gold": [
+    "smartctl"
+   ],
+   "chosen": "npm doctor",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "npm doctor",
+   "unfilled": 0,
+   "ms": 21.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "how much space does each user's home folder take",
+   "gold": [
+    "du"
+   ],
+   "chosen": "mkhomedir_helper",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "sudo mkhomedir_helper tex",
+   "unfilled": 0,
+   "ms": 38.9,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "find out the uuid of a partition",
+   "gold": [
+    "blkid",
+    "lsblk"
+   ],
+   "chosen": "findfs",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "findfs LABEL={{label}}",
+   "unfilled": 1,
+   "ms": 37.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "stop a program that has frozen",
+   "gold": [
+    "kill",
+    "pkill",
+    "killall",
+    "xkill"
+   ],
+   "chosen": "systemctl thaw",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "systemctl thaw {{unit}}",
+   "unfilled": 1,
+   "ms": 22.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "which program is hogging the memory right now",
+   "gold": [
+    "top",
+    "htop",
+    "ps"
+   ],
+   "chosen": "which",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "which {{executable}}",
+   "unfilled": 1,
+   "ms": 25.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "find the process id of firefox",
+   "gold": [
+    "pgrep",
+    "pidof",
+    "ps"
+   ],
+   "chosen": "firefox",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "firefox {{https://www.duckduckgo.com}}",
+   "unfilled": 1,
+   "ms": 28.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "make a running program use less cpu so the rest of the system stays snappy",
+   "gold": [
+    "renice",
+    "nice"
+   ],
+   "chosen": "cpulimit",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "cpulimit -p {{1234}} -l {{25%}}",
+   "unfilled": 2,
+   "ms": 72.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "time how long a command takes to finish",
+   "gold": [
+    "time"
+   ],
+   "chosen": "time",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "time {{command}}",
+   "unfilled": 1,
+   "ms": 31.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "show the tree of processes and their children",
+   "gold": [
+    "pstree",
+    "ps"
+   ],
+   "chosen": "pstree",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "pstree",
+   "unfilled": 0,
+   "ms": 35.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "set a job to run every night at 3am",
+   "gold": [
+    "crontab"
+   ],
+   "chosen": "crontab",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "crontab -e",
+   "unfilled": 0,
+   "ms": 30.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "run a command once at a specific time later today",
+   "gold": [
+    "at"
+   ],
+   "chosen": "at",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "at now + 5 minutes",
+   "unfilled": 0,
+   "ms": 60.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "pause for 5 seconds in a script",
+   "gold": [
+    "sleep"
+   ],
+   "chosen": "x11perf",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "/usr/bin/x11perf [-options ...]",
+   "unfilled": 0,
+   "ms": 31.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "what ports are open and listening on this machine",
+   "gold": [
+    "ss",
+    "netstat",
+    "lsof"
+   ],
+   "chosen": "netstat",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "netstat -a",
+   "unfilled": 0,
+   "ms": 25.9,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "which server does example.org point to",
+   "gold": [
+    "dig",
+    "host",
+    "nslookup",
+    "getent"
+   ],
+   "chosen": "which",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "which {{executable}}",
+   "unfilled": 1,
+   "ms": 21.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "trace the route packets take to a server",
+   "gold": [
+    "traceroute",
+    "tracepath",
+    "mtr"
+   ],
+   "chosen": "route",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "route -n",
+   "unfilled": 0,
+   "ms": 34.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "log in to another computer remotely over a secure shell",
+   "gold": [
+    "ssh"
+   ],
+   "chosen": "sshd",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "sshd",
+   "unfilled": 0,
+   "ms": 62.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "send a file to a remote server",
+   "gold": [
+    "scp",
+    "rsync",
+    "sftp"
+   ],
+   "chosen": "git push",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git push",
+   "unfilled": 0,
+   "ms": 35.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "test whether a port on a remote host accepts connections",
+   "gold": [
+    "nc",
+    "ncat",
+    "netcat",
+    "telnet",
+    "nmap"
+   ],
+   "chosen": "ncat",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "ncat -l {{port}} > {{path/to/file}}",
+   "unfilled": 2,
+   "ms": 31.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "list the network cards on this machine and whether they are up",
+   "gold": [
+    "ip",
+    "ifconfig",
+    "nmcli"
+   ],
+   "chosen": "lpstat",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "lpstat",
+   "unfilled": 0,
+   "ms": 36.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "connect to a wifi network from the terminal",
+   "gold": [
+    "nmcli",
+    "iwctl",
+    "wpa_cli"
+   ],
+   "chosen": "nmcli device",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "nmcli d",
+   "unfilled": 0,
+   "ms": 36.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "download a whole website for offline reading",
+   "gold": [
+    "wget",
+    "httrack"
+   ],
+   "chosen": "reading",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "reading [options]",
+   "unfilled": 0,
+   "ms": 54.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "send a POST request with json to an api",
+   "gold": [
+    "curl",
+    "http",
+    "wget"
+   ],
+   "chosen": "gh api",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "gh api repos/:owner/:repo/releases",
+   "unfilled": 0,
+   "ms": 34.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "show the routing table",
+   "gold": [
+    "ip",
+    "route",
+    "netstat"
+   ],
+   "chosen": "ip route list",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "ip r l",
+   "unfilled": 0,
+   "ms": 22.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "see which dns server this machine uses",
+   "gold": [
+    "resolvectl",
+    "systemd-resolve",
+    "nmcli",
+    "cat"
+   ],
+   "chosen": "dig",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "dig myhost",
+   "unfilled": 0,
+   "ms": 16.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "run a command as the administrator",
+   "gold": [
+    "sudo"
+   ],
+   "chosen": "fakeroot",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "fakeroot",
+   "unfilled": 0,
+   "ms": 31.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "switch to a different user account",
+   "gold": [
+    "su",
+    "sudo"
+   ],
+   "chosen": "su",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "su",
+   "unfilled": 0,
+   "ms": 57.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "add a new user account to this machine",
+   "gold": [
+    "adduser",
+    "useradd"
+   ],
+   "chosen": "gh ssh-key",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "gh ssh-key ls",
+   "unfilled": 0,
+   "ms": 33.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "change my password",
+   "gold": [
+    "passwd"
+   ],
+   "chosen": "passwd",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "passwd",
+   "unfilled": 0,
+   "ms": 6.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "which groups am I a member of",
+   "gold": [
+    "groups",
+    "id"
+   ],
+   "chosen": "groups",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "groups",
+   "unfilled": 0,
+   "ms": 28.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "put a user in the docker group",
+   "gold": [
+    "usermod",
+    "gpasswd",
+    "adduser"
+   ],
+   "chosen": "gpasswd",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "sudo gpasswd -A {{user1,user2}} {{group}}",
+   "unfilled": 2,
+   "ms": 33.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "who has logged into this machine recently",
+   "gold": [
+    "last",
+    "lastlog"
+   ],
+   "chosen": "who",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "who",
+   "unfilled": 0,
+   "ms": 13.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "update the list of available packages and upgrade everything",
+   "gold": [
+    "apt",
+    "apt-get"
+   ],
+   "chosen": "apt-get",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "sudo apt-get update",
+   "unfilled": 0,
+   "ms": 64.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "remove a program I installed along with its config",
+   "gold": [
+    "apt",
+    "apt-get",
+    "dpkg"
+   ],
+   "chosen": "npm",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "npm init -y",
+   "unfilled": 0,
+   "ms": 28.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "search for a package by keyword",
+   "gold": [
+    "apt",
+    "apt-cache"
+   ],
+   "chosen": "npm search",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "npm s {{package}}",
+   "unfilled": 1,
+   "ms": 27.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "list every package installed",
+   "gold": [
+    "dpkg",
+    "apt",
+    "dpkg-query"
+   ],
+   "chosen": "sdkmanager",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "sdkmanager --list",
+   "unfilled": 0,
+   "ms": 11.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "install a .deb file I downloaded",
+   "gold": [
+    "dpkg",
+    "apt",
+    "gdebi"
+   ],
+   "chosen": "npm install",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "npm i",
+   "unfilled": 0,
+   "ms": 23.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "install a snap app",
+   "gold": [
+    "snap"
+   ],
+   "chosen": "snap",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "snap --nosplash --nogui --modules --list --refresh",
+   "unfilled": 0,
+   "ms": 19.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "install a python library for my user",
+   "gold": [
+    "pip",
+    "pip3",
+    "pipx"
+   ],
+   "chosen": "python",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "python",
+   "unfilled": 0,
+   "ms": 58.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "which ubuntu version is this",
+   "gold": [
+    "lsb_release",
+    "cat",
+    "hostnamectl"
+   ],
+   "chosen": "pixiecore",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "pixiecore {{quick}} xyz --dhcp-no-bind",
+   "unfilled": 1,
+   "ms": 15.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "how many cpu cores does this machine have",
+   "gold": [
+    "nproc",
+    "lscpu"
+   ],
+   "chosen": "e2freefrag",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "e2freefrag {{/dev/sdXN}}",
+   "unfilled": 1,
+   "ms": 13.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "what graphics card is installed",
+   "gold": [
+    "lspci",
+    "lshw",
+    "nvidia-smi"
+   ],
+   "chosen": "prime-run",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "prime-run {{command}}",
+   "unfilled": 1,
+   "ms": 9.9,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "list the hardware in this computer",
+   "gold": [
+    "lshw",
+    "lspci",
+    "inxi",
+    "hwinfo"
+   ],
+   "chosen": "gdm-control",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "gdm-control ACTION",
+   "unfilled": 0,
+   "ms": 29.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "read the kernel's messages about hardware",
+   "gold": [
+    "dmesg",
+    "journalctl"
+   ],
+   "chosen": "dmesg",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "sudo dmesg",
+   "unfilled": 0,
+   "ms": 24.2,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "what time zone is the system set to",
+   "gold": [
+    "timedatectl",
+    "date"
+   ],
+   "chosen": "timedatectl",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "timedatectl",
+   "unfilled": 0,
+   "ms": 31.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "change the computer's name",
+   "gold": [
+    "hostnamectl",
+    "hostname"
+   ],
+   "chosen": "git reauthor",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git reauthor -o {{old@example.com}} -e {{new@example.com}} -n \"{{name}}\"",
+   "unfilled": 3,
+   "ms": 51.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "reboot the computer",
+   "gold": [
+    "reboot",
+    "shutdown",
+    "systemctl"
+   ],
+   "chosen": "reboot",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "reboot",
+   "unfilled": 0,
+   "ms": 20.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "turn the machine off in 10 minutes",
+   "gold": [
+    "shutdown"
+   ],
+   "chosen": "nmcli radio",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "nmcli r w",
+   "unfilled": 0,
+   "ms": 26.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "restart the ssh service",
+   "gold": [
+    "systemctl",
+    "service"
+   ],
+   "chosen": "service",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "service --status-all",
+   "unfilled": 0,
+   "ms": 20.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "make a service start automatically at boot",
+   "gold": [
+    "systemctl"
+   ],
+   "chosen": "chkconfig",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "chkconfig --list",
+   "unfilled": 0,
+   "ms": 22.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "see the logs for one particular service",
+   "gold": [
+    "journalctl"
+   ],
+   "chosen": "docker compose logs",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "docker compose logs",
+   "unfilled": 0,
+   "ms": 56.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "how long did boot take",
+   "gold": [
+    "systemd-analyze"
+   ],
+   "chosen": "ac",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "ac",
+   "unfilled": 0,
+   "ms": 7.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "list the usb devices connected",
+   "gold": [
+    "lsusb"
+   ],
+   "chosen": "lsusb",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "lsusb",
+   "unfilled": 0,
+   "ms": 23.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "unpack a .tar.gz archive",
+   "gold": [
+    "tar"
+   ],
+   "chosen": "lz",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "lz {{path/to/file.tar.gz}}",
+   "unfilled": 1,
+   "ms": 20.1,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "zip up a folder to send by email",
+   "gold": [
+    "zip",
+    "tar"
+   ],
+   "chosen": "zip",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "zip -r {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}",
+   "unfilled": 2,
+   "ms": 31.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "look inside a zip without extracting it",
+   "gold": [
+    "unzip",
+    "zipinfo",
+    "7z"
+   ],
+   "chosen": "unsquashfs",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "unsquashfs {{filesystem.squashfs}}",
+   "unfilled": 1,
+   "ms": 22.7,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "compress a single file as small as possible",
+   "gold": [
+    "xz",
+    "gzip",
+    "zstd",
+    "bzip2",
+    "7z"
+   ],
+   "chosen": "pnmcolormap",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "pnmcolormap {{n_colors}} {{path/to/input.pnm}} > {{path/to/output.ppm}}",
+   "unfilled": 3,
+   "ms": 57.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "open a .7z archive",
+   "gold": [
+    "7z",
+    "7za",
+    "7zr"
+   ],
+   "chosen": "p7zip",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "p7zip {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 22.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "save my work in progress without committing so I can switch branches",
+   "gold": [
+    "git stash",
+    "git-stash"
+   ],
+   "chosen": "ex",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "ex {{path/to/file}}",
+   "unfilled": 1,
+   "ms": 22.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "see who last changed each line of a file",
+   "gold": [
+    "git blame",
+    "git-blame"
+   ],
+   "chosen": "who",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "who",
+   "unfilled": 0,
+   "ms": 33.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "get a copy of a repository from github",
+   "gold": [
+    "git clone",
+    "git-clone"
+   ],
+   "chosen": "ghq",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "ghq get {{repository_url}}",
+   "unfilled": 1,
+   "ms": 35.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "pull the latest changes from the server",
+   "gold": [
+    "git pull",
+    "git-pull"
+   ],
+   "chosen": "git pull",
+   "type": "",
+   "split": "heldout",
+   "hit": true,
+   "line": "git pull",
+   "unfilled": 0,
+   "ms": 60.0,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": true,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "combine another branch into the one I'm on",
+   "gold": [
+    "git merge",
+    "git-merge",
+    "git rebase",
+    "git-rebase"
+   ],
+   "chosen": "git merge-into",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git merge-into {{source_branch}} {{destination_branch}}",
+   "unfilled": 2,
+   "ms": 28.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "tag this commit as version 1.0",
+   "gold": [
+    "git tag",
+    "git-tag"
+   ],
+   "chosen": "git show",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "git show",
+   "unfilled": 0,
+   "ms": 15.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "see which files I've modified",
+   "gold": [
+    "git status",
+    "git-status",
+    "git diff",
+    "git-diff"
+   ],
+   "chosen": "which",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "which {{executable}}",
+   "unfilled": 1,
+   "ms": 12.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "what time is it in utc",
+   "gold": [
+    "date"
+   ],
+   "chosen": "time",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "time {{command}}",
+   "unfilled": 1,
+   "ms": 18.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "convert a video to mp3 audio",
+   "gold": [
+    "ffmpeg"
+   ],
+   "chosen": "youtube-dl",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "youtube-dl '{{https://www.youtube.com/watch?v=oHg5SJYRHA0}}'",
+   "unfilled": 1,
+   "ms": 27.4,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "shrink a jpeg photo to half its size",
+   "gold": [
+    "convert",
+    "magick",
+    "mogrify",
+    "ffmpeg"
+   ],
+   "chosen": "resize2fs",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "resize2fs {{/dev/sdXN}}",
+   "unfilled": 1,
+   "ms": 55.8,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "generate a random password",
+   "gold": [
+    "pwgen",
+    "openssl",
+    "tr",
+    "head"
+   ],
+   "chosen": "makepasswd",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "makepasswd",
+   "unfilled": 0,
+   "ms": 21.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "calculate 17 times 23 in the terminal",
+   "gold": [
+    "bc",
+    "expr",
+    "python3",
+    "awk",
+    "echo"
+   ],
+   "chosen": "dc",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "dc",
+   "unfilled": 0,
+   "ms": 26.5,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "show a list of the commands I typed recently",
+   "gold": [
+    "history",
+    "fc"
+   ],
+   "chosen": "sa",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "sudo sa",
+   "unfilled": 0,
+   "ms": 37.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "see the manual for a command",
+   "gold": [
+    "man",
+    "info",
+    "tldr"
+   ],
+   "chosen": "systemctl help",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "systemctl help {{unit}}",
+   "unfilled": 1,
+   "ms": 33.9,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": true,
+    "@20": true,
+    "@120": true
+   },
+   "degraded": []
+  },
+  {
+   "q": "find which command does something when I only know a keyword",
+   "gold": [
+    "apropos",
+    "man"
+   ],
+   "chosen": "find",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "find {{path/to/directory}} -type f | wc -l",
+   "unfilled": 1,
+   "ms": 57.3,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": false,
+    "fill": false,
+    "gate": false
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": false
+   },
+   "degraded": []
+  },
+  {
+   "q": "encrypt a file with a password",
+   "gold": [
+    "gpg",
+    "openssl",
+    "zip",
+    "age"
+   ],
+   "chosen": "ansible-vault",
+   "type": "",
+   "split": "heldout",
+   "hit": false,
+   "line": "ansible-vault create {{path/to/vault_file}}",
+   "unfilled": 1,
+   "ms": 31.6,
+   "usd": 0,
+   "stage_hit": {
+    "retrieve": true,
+    "fill": true,
+    "gate": true
+   },
+   "stage_n": {
+    "retrieve": 120,
+    "fill": 120,
+    "gate": 120
+   },
+   "retrieve_cut_hit": {
+    "@1": false,
+    "@5": false,
+    "@20": false,
+    "@120": true
+   },
+   "degraded": []
+  }
+ ],
+ "line": null,
+ "baseline": null,
+ "paid_topology": false
+}

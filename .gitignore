@@ -1,0 +1,14 @@
+out/
+__pycache__/
+*.pyc
+.venv/
+# corpus cache (tldr seed, --help scan, man fallback) — regenerated, never committed
+.local/share/jiffy/
+corpus/*.json
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+# demo video project (20 MB renders) — kept local
+videos/

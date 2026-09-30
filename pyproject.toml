@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jiffy"
+version = "0.1.0"
+description = "A smart terminal assistant: CLI commands on demand from plain English, with what each flag does."
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "tex" }]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    # The frontend. Real readline semantics, native autosuggestion, native key bindings.
+    "prompt_toolkit>=3.0",
+    # config.toml. 3.11+ has tomllib in the stdlib, so this is a back-compat shim only.
+    "tomli>=2.0; python_version < '3.11'",
+]
+
+[project.urls]
+Homepage = "https://github.com/freakinfrick/jiffy"
+
+[project.scripts]
+jiffy = "jiffy.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["jiffy*"]
+
+[tool.setuptools.package-data]
+"jiffy.corpus" = ["recipes/*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -1,0 +1,902 @@
+[
+ {
+  "q": "show the last 5 commits as one line each",
+  "cmd": [
+   "git log"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "list all files including hidden ones, newest first, with sizes readable",
+  "cmd": [
+   "ls"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "find empty directories under /tmp",
+  "cmd": [
+   "find",
+   "fd"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "find files under /var/log modified in the last day that are larger than 1 megabyte",
+  "cmd": [
+   "find"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "search recursively for TODO ignoring case and show line numbers",
+  "cmd": [
+   "grep",
+   "rg",
+   "ag"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "show disk usage of each folder here, human readable, only one level deep",
+  "cmd": [
+   "du",
+   "dust",
+   "ncdu"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "count only the lines of main.c",
+  "cmd": [
+   "wc"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "sort data.txt numerically in reverse",
+  "cmd": [
+   "sort"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "show all processes as a tree with full command lines",
+  "cmd": [
+   "ps",
+   "pstree"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "copy the photos folder recursively and keep timestamps and permissions",
+  "cmd": [
+   "cp",
+   "rsync"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "make a gzipped tarball of src verbosely",
+  "cmd": [
+   "tar"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "show listening tcp ports with the owning process",
+  "cmd": [
+   "ss",
+   "netstat",
+   "lsof"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "show git diff of staged changes, just the file names",
+  "cmd": [
+   "git diff"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "follow the end of app.log starting from the last 100 lines",
+  "cmd": [
+   "tail"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "delete branches that are already merged, forcing it",
+  "cmd": [
+   "git branch"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "print lines of access.log that do not contain 200, counting them",
+  "cmd": [
+   "grep",
+   "rg"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "sync the music folder to the backup drive and delete files that no longer exist, showing progress",
+  "cmd": [
+   "rsync"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "show the 10 biggest files in this directory tree",
+  "cmd": [
+   "du",
+   "find",
+   "dust",
+   "ls"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "list only directories, one per line, including hidden ones",
+  "cmd": [
+   "ls",
+   "find",
+   "fd"
+  ],
+  "type": "combine",
+  "split": "dev"
+ },
+ {
+  "q": "show commits by alice from the last two weeks",
+  "cmd": [
+   "git log"
+  ],
+  "type": "combine",
+  "split": "heldout"
+ },
+ {
+  "q": "list the markdown files in my documents folder",
+  "cmd": [
+   "ls",
+   "fd",
+   "find"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "show what is in /etc/hosts",
+  "cmd": [
+   "cat",
+   "bat",
+   "less"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "make the deploy.sh script executable",
+  "cmd": [
+   "chmod"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "rename notes.txt to notes-old.txt",
+  "cmd": [
+   "mv"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "create the folder projects/demo/src including parents",
+  "cmd": [
+   "mkdir"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "copy report.pdf to the Desktop",
+  "cmd": [
+   "cp"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "delete every .tmp file in this directory",
+  "cmd": [
+   "rm",
+   "find"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "give the www-data user ownership of /srv/site",
+  "cmd": [
+   "chown"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "show the first 3 lines of README.md",
+  "cmd": [
+   "head"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "list the jpg files in Downloads",
+  "cmd": [
+   "ls",
+   "fd",
+   "find"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "make a symlink called latest pointing to build-42",
+  "cmd": [
+   "ln"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "move all the log files into the old folder",
+  "cmd": [
+   "mv"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "check which python I am running",
+  "cmd": [
+   "which",
+   "type",
+   "command"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "remove the empty folder called scratch",
+  "cmd": [
+   "rmdir",
+   "rm"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "compare config.old and config.new",
+  "cmd": [
+   "diff",
+   "delta",
+   "vimdiff"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "extract backup.tar.gz here",
+  "cmd": [
+   "tar"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "unzip the archive photos.zip into a folder named photos",
+  "cmd": [
+   "unzip",
+   "7z"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "set the permissions of secret.key so only the owner can read and write it",
+  "cmd": [
+   "chmod"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "touch a new empty file called notes.md",
+  "cmd": [
+   "touch"
+  ],
+  "type": "args",
+  "split": "dev"
+ },
+ {
+  "q": "show the contents of both a.txt and b.txt joined together",
+  "cmd": [
+   "cat"
+  ],
+  "type": "args",
+  "split": "heldout"
+ },
+ {
+  "q": "find javascript files in src",
+  "cmd": [
+   "fd",
+   "find"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "find files bigger than 2 gigabytes in my home",
+  "cmd": [
+   "find",
+   "fd"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "show the last 50 lines of syslog",
+  "cmd": [
+   "tail",
+   "journalctl"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "wait 30 seconds",
+  "cmd": [
+   "sleep"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "search the rust files for unwrap",
+  "cmd": [
+   "rg",
+   "grep",
+   "ag"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "find files not modified in the last 90 days under /data",
+  "cmd": [
+   "find",
+   "fd"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "ping google.com 4 times",
+  "cmd": [
+   "ping"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "show the first 15 lines of every csv here",
+  "cmd": [
+   "head"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "kill process 4242",
+  "cmd": [
+   "kill"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "list the yaml files in this repo",
+  "cmd": [
+   "fd",
+   "find",
+   "git ls-files",
+   "ls"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "split big.log into 100 megabyte pieces",
+  "cmd": [
+   "split"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "show directories at most 2 levels deep as a tree",
+  "cmd": [
+   "tree"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "print the second field of users.csv",
+  "cmd": [
+   "cut",
+   "awk",
+   "csvcut"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "count the typescript files under app",
+  "cmd": [
+   "fd",
+   "find"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "resize photo.png to 800 pixels wide",
+  "cmd": [
+   "convert",
+   "magick",
+   "mogrify",
+   "ffmpeg"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "connect to server.example.com over ssh on port 2222",
+  "cmd": [
+   "ssh"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "download https://example.com/file.iso",
+  "cmd": [
+   "wget",
+   "curl",
+   "aria2c"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "show the 20 most recent journal entries",
+  "cmd": [
+   "journalctl"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "delete the shell scripts older than a week in /tmp",
+  "cmd": [
+   "find"
+  ],
+  "type": "values",
+  "split": "dev"
+ },
+ {
+  "q": "find the word timeout in all the config files",
+  "cmd": [
+   "grep",
+   "rg",
+   "ag"
+  ],
+  "type": "values",
+  "split": "heldout"
+ },
+ {
+  "q": "how many files are in this folder",
+  "cmd": [
+   "ls",
+   "find",
+   "fd",
+   "wc"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "count how many lines contain error in app.log",
+  "cmd": [
+   "grep",
+   "rg"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "show the 5 most common lines in words.txt",
+  "cmd": [
+   "sort",
+   "uniq"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "list the running processes that mention python",
+  "cmd": [
+   "ps",
+   "pgrep"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "show the biggest 5 folders in my home",
+  "cmd": [
+   "du",
+   "dust",
+   "sort"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "count unique ip addresses in access.log",
+  "cmd": [
+   "awk",
+   "cut",
+   "sort",
+   "uniq"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "show only the names of files that changed in the last commit",
+  "cmd": [
+   "git show",
+   "git diff",
+   "git log"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "see the env variables that contain PATH",
+  "cmd": [
+   "env",
+   "printenv",
+   "grep"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "how many commits are on this branch",
+  "cmd": [
+   "git rev-list",
+   "git log"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "show which packages are installed that have nginx in the name",
+  "cmd": [
+   "dpkg",
+   "apt",
+   "apt-cache"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "kill every process named node",
+  "cmd": [
+   "pkill",
+   "killall"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "list files sorted by size, largest first, top 10",
+  "cmd": [
+   "ls",
+   "du",
+   "sort"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "print the total size of all the pdfs here",
+  "cmd": [
+   "du"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "show my public ip address",
+  "cmd": [
+   "curl",
+   "dig"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "show the lines in a.txt that are not in b.txt",
+  "cmd": [
+   "comm",
+   "diff",
+   "grep"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "count words in all the markdown files",
+  "cmd": [
+   "wc",
+   "cat"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "find duplicate lines in list.txt",
+  "cmd": [
+   "sort",
+   "uniq"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "show the 3 processes using the most memory",
+  "cmd": [
+   "ps",
+   "top"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "show open files of the process called nginx",
+  "cmd": [
+   "lsof"
+  ],
+  "type": "pipe",
+  "split": "dev"
+ },
+ {
+  "q": "count how many times each http status code appears in access.log",
+  "cmd": [
+   "awk",
+   "cut",
+   "sort",
+   "uniq"
+  ],
+  "type": "pipe",
+  "split": "heldout"
+ },
+ {
+  "q": "where am I in the filesystem",
+  "cmd": [
+   "pwd"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "who is logged in right now",
+  "cmd": [
+   "who",
+   "w",
+   "users"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "how long has this machine been on",
+  "cmd": [
+   "uptime"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "what kernel am I running",
+  "cmd": [
+   "uname"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "how much memory is free",
+  "cmd": [
+   "free",
+   "vmstat"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "what is my username",
+  "cmd": [
+   "whoami",
+   "id"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "show the date and time",
+  "cmd": [
+   "date",
+   "timedatectl"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "what is the ip address of this machine",
+  "cmd": [
+   "ip",
+   "hostname",
+   "ifconfig"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "go back to the folder I was in before",
+  "cmd": [
+   "cd"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "clear the terminal",
+  "cmd": [
+   "clear",
+   "reset"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "show which ports this machine is listening on",
+  "cmd": [
+   "ss",
+   "netstat",
+   "lsof"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "show my previous commands",
+  "cmd": [
+   "history",
+   "fc"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "how full are the disks",
+  "cmd": [
+   "df",
+   "duf"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "what type of file is mystery.bin",
+  "cmd": [
+   "file"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "make a checksum of the iso",
+  "cmd": [
+   "sha256sum",
+   "md5sum",
+   "sha1sum",
+   "b2sum"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "turn the computer off",
+  "cmd": [
+   "shutdown",
+   "poweroff",
+   "systemctl"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "show which graphics card is installed",
+  "cmd": [
+   "lspci",
+   "nvidia-smi",
+   "lshw"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "check whether the docker service is running",
+  "cmd": [
+   "systemctl",
+   "service"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ },
+ {
+  "q": "show the calendar for this month",
+  "cmd": [
+   "cal",
+   "ncal"
+  ],
+  "type": "retrieve",
+  "split": "dev"
+ },
+ {
+  "q": "what does the ls command do",
+  "cmd": [
+   "man",
+   "tldr",
+   "whatis"
+  ],
+  "type": "retrieve",
+  "split": "heldout"
+ }
+]

@@ -1,0 +1,373 @@
+[
+ {
+  "q": "list files in the home directory but not the folders",
+  "cmd": "ls"
+ },
+ {
+  "q": "how much space is this folder using",
+  "cmd": "du"
+ },
+ {
+  "q": "how much room is left on the disk",
+  "cmd": "df"
+ },
+ {
+  "q": "find every file bigger than 100 megabytes under /var",
+  "cmd": "find"
+ },
+ {
+  "q": "search all the python files for the word password",
+  "cmd": [
+   "grep",
+   "rg",
+   "ag"
+  ]
+ },
+ {
+  "q": "what is using port 8088",
+  "cmd": [
+   "ss",
+   "lsof",
+   "fuser",
+   "netstat"
+  ]
+ },
+ {
+  "q": "kill the process that is eating all the cpu",
+  "cmd": "kill"
+ },
+ {
+  "q": "watch a log file as new lines arrive",
+  "cmd": "tail"
+ },
+ {
+  "q": "copy a folder to another machine over ssh",
+  "cmd": [
+   "rsync",
+   "scp"
+  ]
+ },
+ {
+  "q": "make a tar archive of this directory compressed with gzip",
+  "cmd": "tar"
+ },
+ {
+  "q": "change a file so only I can read it",
+  "cmd": "chmod"
+ },
+ {
+  "q": "show me the last 20 commits in one line each",
+  "cmd": "git log"
+ },
+ {
+  "q": "undo my last commit but keep the changes",
+  "cmd": "git reset"
+ },
+ {
+  "q": "replace foo with bar in every file in this directory",
+  "cmd": [
+   "sed",
+   "perl"
+  ]
+ },
+ {
+  "q": "print the third column of a csv",
+  "cmd": [
+   "awk",
+   "cut",
+   "csvcut"
+  ]
+ },
+ {
+  "q": "count how many lines are in a file",
+  "cmd": "wc"
+ },
+ {
+  "q": "download a file from a url",
+  "cmd": [
+   "curl",
+   "wget"
+  ]
+ },
+ {
+  "q": "show which version of the kernel I am running",
+  "cmd": "uname"
+ },
+ {
+  "q": "list the docker containers that are running",
+  "cmd": [
+   "docker ps",
+   "docker container ls",
+   "docker"
+  ]
+ },
+ {
+  "q": "rename all the .jpeg files to .jpg",
+  "cmd": "rename"
+ },
+ {
+  "q": "see what my computer is doing right now, processes and memory",
+  "cmd": [
+   "top",
+   "htop",
+   "ps"
+  ]
+ },
+ {
+  "q": "sort a file and remove the duplicate lines",
+  "cmd": [
+   "sort",
+   "uniq"
+  ]
+ },
+ {
+  "q": "make a new directory including its parent directories",
+  "cmd": "mkdir"
+ },
+ {
+  "q": "find out where the ls program actually lives",
+  "cmd": [
+   "which",
+   "command",
+   "type",
+   "whereis"
+  ]
+ },
+ {
+  "q": "show the difference between two files",
+  "cmd": "diff"
+ },
+ {
+  "q": "show me all the environment variables",
+  "cmd": [
+   "env",
+   "printenv"
+  ]
+ },
+ {
+  "q": "what is my ip address on the local network",
+  "cmd": [
+   "ip",
+   "hostname",
+   "ifconfig"
+  ]
+ },
+ {
+  "q": "check if a website is reachable",
+  "cmd": [
+   "ping",
+   "curl",
+   "nc"
+  ]
+ },
+ {
+  "q": "extract a zip file into a folder",
+  "cmd": [
+   "unzip"
+  ]
+ },
+ {
+  "q": "see how long the machine has been on",
+  "cmd": [
+   "uptime",
+   "w"
+  ]
+ },
+ {
+  "q": "show me the running services under systemd",
+  "cmd": [
+   "systemctl"
+  ]
+ },
+ {
+  "q": "follow the system journal live",
+  "cmd": [
+   "journalctl"
+  ]
+ },
+ {
+  "q": "give a file a different name",
+  "cmd": [
+   "mv"
+  ]
+ },
+ {
+  "q": "make an empty file",
+  "cmd": [
+   "touch"
+  ]
+ },
+ {
+  "q": "show the first ten lines of a file",
+  "cmd": [
+   "head"
+  ]
+ },
+ {
+  "q": "open a file in a pager so I can scroll it",
+  "cmd": [
+   "less",
+   "more"
+  ]
+ },
+ {
+  "q": "show me a calendar for this month",
+  "cmd": [
+   "cal"
+  ]
+ },
+ {
+  "q": "find which package owns a file on debian",
+  "cmd": [
+   "dpkg",
+   "apt-file"
+  ]
+ },
+ {
+  "q": "install a package with apt",
+  "cmd": [
+   "apt",
+   "apt-get"
+  ]
+ },
+ {
+  "q": "see what disk partitions exist",
+  "cmd": [
+   "lsblk",
+   "fdisk",
+   "parted"
+  ]
+ },
+ {
+  "q": "mount a usb stick",
+  "cmd": [
+   "mount"
+  ]
+ },
+ {
+  "q": "check the sha256 of a downloaded file",
+  "cmd": [
+   "sha256sum"
+  ]
+ },
+ {
+  "q": "encode a file to base64",
+  "cmd": [
+   "base64"
+  ]
+ },
+ {
+  "q": "pretty print a json file",
+  "cmd": [
+   "jq"
+  ]
+ },
+ {
+  "q": "convert a png to jpeg",
+  "cmd": [
+   "convert",
+   "magick",
+   "ffmpeg"
+  ]
+ },
+ {
+  "q": "trim the first 10 seconds off a video",
+  "cmd": [
+   "ffmpeg"
+  ]
+ },
+ {
+  "q": "make a python virtual environment",
+  "cmd": [
+   "python",
+   "virtualenv",
+   "uv"
+  ]
+ },
+ {
+  "q": "show the git branches including remote ones",
+  "cmd": [
+   "git branch"
+  ]
+ },
+ {
+  "q": "throw away all my uncommitted changes",
+  "cmd": [
+   "git restore",
+   "git checkout",
+   "git reset"
+  ]
+ },
+ {
+  "q": "see what changed in a commit",
+  "cmd": [
+   "git show",
+   "git diff"
+  ]
+ },
+ {
+  "q": "push a new branch to origin",
+  "cmd": [
+   "git push"
+  ]
+ },
+ {
+  "q": "run a command every two seconds and watch the output change",
+  "cmd": [
+   "watch"
+  ]
+ },
+ {
+  "q": "run something in the background even after I log out",
+  "cmd": [
+   "nohup",
+   "tmux",
+   "screen",
+   "disown"
+  ]
+ },
+ {
+  "q": "list open files held by a process",
+  "cmd": [
+   "lsof"
+  ]
+ },
+ {
+  "q": "see how much memory is free",
+  "cmd": [
+   "free"
+  ]
+ },
+ {
+  "q": "change the owner of a file to root",
+  "cmd": [
+   "chown"
+  ]
+ },
+ {
+  "q": "create a symbolic link",
+  "cmd": [
+   "ln"
+  ]
+ },
+ {
+  "q": "count how many files are in a directory",
+  "cmd": [
+   "ls",
+   "find"
+  ]
+ },
+ {
+  "q": "show me the path I am currently in",
+  "cmd": [
+   "pwd"
+  ]
+ },
+ {
+  "q": "search my shell history for a command I ran",
+  "cmd": [
+   "history",
+   "grep"
+  ]
+ }
+]
